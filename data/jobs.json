@@ -1,0 +1,90 @@
+{
+  "goal": { "monthlyApplications": 10 },
+  "minPay": 70000,
+  "jobs": [
+    {
+      "id": "sketchy-css",
+      "company": "Sketchy",
+      "role": "Customer Success Specialist",
+      "pay": "$75,000 - $100,000",
+      "payMin": 75000,
+      "link": "https://to.indeed.com/aa8lmjgqsdc4",
+      "dateFound": "2026-11-11",
+      "status": "Found",
+      "dateApplied": "",
+      "contact": "",
+      "fit": "High",
+      "notes": "Supports health-professions programs. NY is an eligible state."
+    },
+    {
+      "id": "care-inf-ops",
+      "company": "CARE-INF",
+      "role": "Founding Operations Coordinator",
+      "pay": "$80,000 - $100,000",
+      "payMin": 80000,
+      "link": "https://to.indeed.com/aamn26jkhjyk",
+      "dateFound": "2026-11-11",
+      "status": "Found",
+      "dateApplied": "",
+      "contact": "",
+      "fit": "High",
+      "notes": "Nursing-education startup. Confirm the company is legitimate before applying."
+    },
+    {
+      "id": "onit-smb-csm",
+      "company": "OnIT",
+      "role": "SMB Customer Success Manager, ContractWorks",
+      "pay": "$70,000 - $85,000",
+      "payMin": 70000,
+      "link": "https://to.indeed.com/aaws46pjjlkd",
+      "dateFound": "2026-11-11",
+      "status": "Found",
+      "dateApplied": "",
+      "contact": "",
+      "fit": "Medium",
+      "notes": "Entry-friendly customer success role."
+    },
+    {
+      "id": "procare-hr-csm",
+      "company": "PROCare HR",
+      "role": "Customer Success Manager",
+      "pay": "$75,000 - $80,000",
+      "payMin": 75000,
+      "link": "https://to.indeed.com/aajmh6swfbhd",
+      "dateFound": "2026-11-11",
+      "status": "Found",
+      "dateApplied": "",
+      "contact": "",
+      "fit": "Medium",
+      "notes": "Posted Sept 24. Confirm it is still open."
+    },
+    {
+      "id": "sidelines-ops",
+      "company": "Sidelines",
+      "role": "Business Operation Coordinator",
+      "pay": "Listed $60 - $75 an hour",
+      "payMin": 70000,
+      "link": "https://to.indeed.com/aabjcdd6lsnj",
+      "dateFound": "2026-11-11",
+      "status": "Found",
+      "dateApplied": "",
+      "contact": "",
+      "fit": "Medium",
+      "notes": "Automation work with Claude and n8n. Verify the pay rate."
+    },
+    {
+      "id": "zeeba-hr-admin",
+      "company": "Zeeba Automotive Group",
+      "role": "HR/Admin Specialist",
+      "pay": "$70,000 - $85,000",
+      "payMin": 70000,
+      "link": "https://to.indeed.com/aalpzqrhkkkw",
+      "dateFound": "2026-11-11",
+      "status": "Found",
+      "dateApplied": "",
+      "contact": "",
+      "fit": "Low",
+      "notes": "Posted Aug 1. Confirm it is still open."
+    }
+  ]
+}

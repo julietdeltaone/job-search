@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Job Search Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #07080c;
+    --panel: rgba(255,255,255,0.035);
+    --panel-hover: rgba(255,255,255,0.06);
+    --line: rgba(255,255,255,0.08);
+    --text: #eceef4;
+    --muted: #8b92a8;
+    --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+    --sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+    --c-found: #94a3b8;
+    --c-drafting: #fbbf24;
+    --c-applied: #818cf8;
+    --c-interview: #22d3ee;
+    --c-offer: #4ade80;
+    --c-closed: #fb7185;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .glow {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background:
+      radial-gradient(900px 500px at 12% -8%, rgba(129,140,248,0.16), transparent 60%),
+      radial-gradient(800px 500px at 95% 0%, rgba(34,211,238,0.09), transparent 60%),
+      radial-gradient(700px 500px at 50% 110%, rgba(74,222,128,0.06), transparent 60%);
+    animation: drift 18s ease-in-out infinite alternate;
+  }
+  @keyframes drift { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(0,-18px,0) scale(1.04); } }
+
+  .shell { position: relative; z-index: 1; width: 100%; min-height: 100vh; display: flex; flex-direction: column; padding: 28px clamp(18px, 3vw, 44px) 40px; }
+
+  header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 18px; animation: rise .8s cubic-bezier(.2,.8,.2,1) both; }
+  h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 4vw, 54px); letter-spacing: -0.01em; margin: 0; line-height: 1; }
+  h1 em { color: var(--c-applied); font-style: italic; }
+  .sub { color: var(--muted); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; margin-top: 10px; }
+  .month-nav { display: flex; align-items: center; gap: 6px; background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 5px; backdrop-filter: blur(10px); }
+  .month-nav button { background: transparent; border: 0; color: var(--text); width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-size: 18px; transition: background .25s, transform .25s; }
+  .month-nav button:hover { background: var(--panel-hover); transform: scale(1.08); }
+  .month-label { min-width: 150px; text-align: center; font-weight: 500; font-size: 14px; }
+
+  .hero {
+    display: grid; grid-template-columns: auto 1fr; gap: clamp(20px, 4vw, 56px); align-items: center;
+    margin: 28px 0 22px; padding: clamp(18px, 2.5vw, 32px);
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
+    border: 1px solid var(--line); border-radius: 22px; backdrop-filter: blur(14px);
+    animation: rise .9s .08s cubic-bezier(.2,.8,.2,1) both;
+  }
+  .ring { position: relative; width: clamp(130px, 14vw, 180px); aspect-ratio: 1; }
+  .ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+  .ring circle { fill: none; stroke-width: 9; stroke-linecap: round; }
+  .ring .track { stroke: rgba(255,255,255,0.07); }
+  .ring .prog { stroke: url(#rg); stroke-dasharray: 339.3; stroke-dashoffset: 339.3; transition: stroke-dashoffset 1.4s cubic-bezier(.2,.8,.2,1); filter: drop-shadow(0 0 8px rgba(129,140,248,.5)); }
+  .ring .center { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; }
+  .ring .pct { font-family: var(--serif); font-size: clamp(34px, 4vw, 48px); line-height: 1; }
+  .goal-line { font-family: var(--serif); font-size: clamp(30px, 4vw, 56px); line-height: 1.05; letter-spacing: -0.01em; }
+  .goal-line i { color: var(--muted); font-size: .55em; font-style: normal; font-family: var(--sans); font-weight: 400; letter-spacing: 0; margin-left: 10px; }
+  .pace { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 500; border: 1px solid; }
+  .pace::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; box-shadow: 0 0 10px currentColor; animation: pulse 2s ease-in-out infinite; }
+  .pace.good { color: var(--c-offer); border-color: rgba(74,222,128,.3); background: rgba(74,222,128,.08); }
+  .pace.warn { color: var(--c-drafting); border-color: rgba(251,191,36,.3); background: rgba(251,191,36,.08); }
+  .pace.bad { color: var(--c-closed); border-color: rgba(251,113,133,.3); background: rgba(251,113,133,.08); }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+
+  .board { flex: 1; display: grid; grid-template-columns: repeat(6, minmax(220px, 1fr)); gap: 14px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x proximity; }
+  .col { display: flex; flex-direction: column; gap: 10px; min-width: 0; scroll-snap-align: start; animation: rise .8s cubic-bezier(.2,.8,.2,1) both; }
+  .col-head { display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; border-radius: 14px; background: var(--panel); border: 1px solid var(--line); border-top: 2px solid var(--c); }
+  .col-title { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--c); font-weight: 600; display: flex; align-items: center; gap: 8px; }
+  .col-title::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--c); box-shadow: 0 0 10px var(--c); }
+  .col-count { font-family: var(--serif); font-size: 22px; line-height: 1; color: var(--text); }
+  .cards { display: flex; flex-direction: column; gap: 10px; min-height: 90px; }
+
+  .card {
+    position: relative; display: block; text-decoration: none; color: inherit;
+    padding: 16px 16px 14px 18px; border-radius: 16px; background: var(--panel); border: 1px solid var(--line);
+    overflow: hidden; opacity: 0; animation: rise .7s cubic-bezier(.2,.8,.2,1) forwards;
+    transition: transform .35s cubic-bezier(.2,.8,.2,1), background .3s, border-color .3s, box-shadow .35s;
+  }
+  .card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--c); box-shadow: 0 0 14px var(--c); }
+  .card:hover { transform: translateY(-4px); background: var(--panel-hover); border-color: color-mix(in srgb, var(--c) 45%, transparent); box-shadow: 0 14px 40px -14px color-mix(in srgb, var(--c) 40%, transparent); }
+  .role { font-weight: 600; font-size: 15px; line-height: 1.3; }
+  .company { color: var(--muted); font-size: 13px; margin-top: 3px; }
+  .pay { font-family: var(--serif); font-size: 21px; margin-top: 12px; letter-spacing: .01em; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .tag { font-size: 11px; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+  .tag.fit-High { color: var(--c-offer); border-color: rgba(74,222,128,.3); background: rgba(74,222,128,.07); }
+  .tag.fit-Medium { color: var(--c-drafting); border-color: rgba(251,191,36,.3); background: rgba(251,191,36,.07); }
+  .tag.fit-Low { color: var(--c-closed); border-color: rgba(251,113,133,.3); background: rgba(251,113,133,.07); }
+  .note { color: var(--muted); font-size: 12px; line-height: 1.5; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line); }
+  .empty { color: rgba(255,255,255,.22); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; text-align: center; padding: 26px 0; border: 1px dashed var(--line); border-radius: 14px; }
+
+  @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 760px) { .hero { grid-template-columns: 1fr; justify-items: center; text-align: center; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0ms !important; transition-duration: .01ms !important; } }
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<div class="shell">
+  <header>
+    <div>
+      <h1>Job Search <em>Tracker</em></h1>
+      <div class="sub" id="sub">Remote roles, $70K and up</div>
+    </div>
+    <div class="month-nav">
+      <button id="prev" aria-label="Previous month">&#8249;</button>
+      <div class="month-label" id="monthLabel"></div>
+      <button id="next" aria-label="Next month">&#8250;</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="ring">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <defs>
+          <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#818cf8"/><stop offset="1" stop-color="#22d3ee"/>
+          </linearGradient>
+        </defs>
+        <circle class="track" cx="60" cy="60" r="54"/>
+        <circle class="prog" id="prog" cx="60" cy="60" r="54"/>
+      </svg>
+      <div class="center"><div class="pct" id="pct">0%</div></div>
+    </div>
+    <div>
+      <div class="goal-line"><span id="appliedNum">0</span> of <span id="goalNum">10</span> applied<i id="monthShort"></i></div>
+      <div class="pace good" id="pace">On pace</div>
+    </div>
+  </section>
+
+  <section class="board" id="board"></section>
+</div>
+
+<script>
+(function () {
+  var COLUMNS = [
+    { key: "Found", title: "Found", color: "var(--c-found)", match: ["Found"] },
+    { key: "Drafting", title: "Drafting", color: "var(--c-drafting)", match: ["Drafting"] },
+    { key: "Applied", title: "Applied", color: "var(--c-applied)", match: ["Applied"] },
+    { key: "Interview", title: "Interview", color: "var(--c-interview)", match: ["Interview"] },
+    { key: "Offer", title: "Offer", color: "var(--c-offer)", match: ["Offer"] },
+    { key: "Closed", title: "Closed", color: "var(--c-closed)", match: ["Rejected", "Passed"] }
+  ];
+  var data = { goal: { monthlyApplications: 10 }, jobs: [] };
+  var today = new Date();
+  var view = new Date(today.getFullYear(), today.getMonth(), 1);
+  var shownApplied = 0;
+  var firstPaint = true;
+  var RING = 339.3;
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text !== undefined) e.textContent = text;
+    return e;
+  }
+  function safeUrl(u) { return /^https?:\/\//i.test(u || "") ? u : null; }
+  function monthKey(d) { return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0"); }
+  function isApplied(j) { return ["Applied", "Interview", "Offer", "Rejected"].indexOf(j.status) !== -1 && !!j.dateApplied; }
+  function fmtDate(s) {
+    if (!s) return "";
+    var p = s.split("-");
+    return new Date(+p[0], +p[1] - 1, +p[2]).toLocaleDateString(undefined, { month: "short", day: "numeric" });
+  }
+  function countTo(node, from, to) {
+    var start = null, dur = 900;
+    function step(t) {
+      if (start === null) start = t;
+      var k = Math.min(1, (t - start) / dur);
+      var ease = 1 - Math.pow(1 - k, 3);
+      node.textContent = Math.round(from + (to - from) * ease);
+      if (k < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function renderHero() {
+    var goal = data.goal.monthlyApplications || 10;
+    var applied = data.jobs.filter(function (j) { return isApplied(j) && j.dateApplied.slice(0, 7) === monthKey(view); }).length;
+    var label = view.toLocaleDateString(undefined, { month: "long", year: "numeric" });
+    document.getElementById("monthLabel").textContent = label;
+    document.getElementById("monthShort").textContent = "in " + view.toLocaleDateString(undefined, { month: "long" });
+    document.getElementById("goalNum").textContent = goal;
+    countTo(document.getElementById("appliedNum"), shownApplied, applied);
+    shownApplied = applied;
+
+    var pct = Math.min(100, Math.round(applied / goal * 100));
+    document.getElementById("pct").textContent = pct + "%";
+    document.getElementById("prog").style.strokeDashoffset = RING - RING * pct / 100;
+
+    var pace = document.getElementById("pace");
+    var isCurrent = monthKey(view) === monthKey(today);
+    var isPast = view < new Date(today.getFullYear(), today.getMonth(), 1);
+    pace.className = "pace";
+    if (applied >= goal) { pace.classList.add("good"); pace.textContent = "Goal reached"; return; }
+    if (isPast) { pace.classList.add("bad"); pace.textContent = (goal - applied) + " short of goal"; return; }
+    if (!isCurrent) { pace.classList.add("warn"); pace.textContent = "Upcoming month"; return; }
+    var dim = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+    var expected = goal * today.getDate() / dim;
+    if (applied >= expected) { pace.classList.add("good"); pace.textContent = "On pace"; }
+    else if (applied >= expected - 2) { pace.classList.add("warn"); pace.textContent = "Slightly behind pace"; }
+    else { pace.classList.add("bad"); pace.textContent = "Behind pace"; }
+  }
+
+  function renderBoard() {
+    var board = document.getElementById("board");
+    board.textContent = "";
+    var n = 0;
+    COLUMNS.forEach(function (c, ci) {
+      var col = el("div", "col");
+      col.style.setProperty("--c", c.color);
+      col.style.animationDelay = (0.12 + ci * 0.06) + "s";
+      var jobs = data.jobs.filter(function (j) { return c.match.indexOf(j.status) !== -1; });
+      var head = el("div", "col-head");
+      head.appendChild(el("div", "col-title", c.title));
+      head.appendChild(el("div", "col-count", String(jobs.length)));
+      col.appendChild(head);
+      var cards = el("div", "cards");
+      if (!jobs.length) cards.appendChild(el("div", "empty", "None yet"));
+      jobs.forEach(function (j) {
+        var url = safeUrl(j.link);
+        var card = url ? el("a", "card") : el("div", "card");
+        if (url) { card.href = url; card.target = "_blank"; card.rel = "noopener noreferrer"; }
+        card.style.setProperty("--c", c.color);
+        card.style.animationDelay = (0.3 + n * 0.07) + "s";
+        n++;
+        card.appendChild(el("div", "role", j.role));
+        card.appendChild(el("div", "company", j.company));
+        if (j.pay) card.appendChild(el("div", "pay", j.pay));
+        var tags = el("div", "tags");
+        if (j.fit) tags.appendChild(el("span", "tag fit-" + j.fit, j.fit + " fit"));
+        if (j.status === "Passed" || j.status === "Rejected") tags.appendChild(el("span", "tag", j.status));
+        if (j.dateApplied) tags.appendChild(el("span", "tag", "Applied " + fmtDate(j.dateApplied)));
+        else if (j.dateFound) tags.appendChild(el("span", "tag", "Found " + fmtDate(j.dateFound)));
+        if (j.contact) tags.appendChild(el("span", "tag", j.contact));
+        card.appendChild(tags);
+        if (j.notes) card.appendChild(el("div", "note", j.notes));
+        cards.appendChild(card);
+      });
+      col.appendChild(cards);
+      board.appendChild(col);
+    });
+  }
+
+  function shift(delta) {
+    view = new Date(view.getFullYear(), view.getMonth() + delta, 1);
+    renderHero();
+  }
+  document.getElementById("prev").onclick = function () { shift(-1); };
+  document.getElementById("next").onclick = function () { shift(1); };
+
+  fetch("data/jobs.json", { cache: "no-store" })
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      data = d;
+      if (d.minPay) document.getElementById("sub").textContent = "Remote roles, $" + Math.round(d.minPay / 1000) + "K and up";
+      renderHero();
+      renderBoard();
+    })
+    .catch(function () {
+      document.getElementById("board").appendChild(el("div", "empty", "Could not load the job data"));
+    });
+})();
+</script>
+</body>
+</html>
