@@ -10,15 +10,13 @@
 <style>
   :root {
     --bg: #07080c;
-    --panel: rgba(255,255,255,0.035);
-    --panel-hover: rgba(255,255,255,0.065);
-    --line: rgba(255,255,255,0.08);
+    --panel: rgba(255,255,255,0.04);
+    --panel-hover: rgba(255,255,255,0.07);
+    --line: rgba(255,255,255,0.09);
     --text: #eceef4;
     --muted: #8b92a8;
     --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
     --sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --accent: #818cf8;
-    --accent-2: #22d3ee;
 
     --c-found: #94a3b8;
     --c-drafting: #fbbf24;
@@ -34,535 +32,215 @@
     position: fixed; inset: 0; pointer-events: none; z-index: 0;
     background:
       radial-gradient(900px 520px at 50% -10%, rgba(129,140,248,0.2), transparent 62%),
-      radial-gradient(700px 500px at 100% 20%, rgba(34,211,238,0.08), transparent 60%),
-      radial-gradient(700px 500px at 0% 90%, rgba(74,222,128,0.06), transparent 60%);
-    animation: drift 18s ease-in-out infinite alternate;
+      radial-gradient(700px 500px at 100% 30%, rgba(34,211,238,0.07), transparent 60%);
   }
-  @keyframes drift { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(0,-18px,0) scale(1.04); } }
-  @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
 
-  .layout {
-    position: relative; z-index: 1; min-height: 100vh;
-    display: grid; grid-template-columns: minmax(230px, 290px) minmax(0, 1040px) minmax(230px, 290px);
-    justify-content: center; align-items: start; gap: 22px;
-    padding: 24px clamp(14px, 2vw, 32px) 40px;
-  }
-  .side { position: sticky; top: 24px; display: flex; flex-direction: column; gap: 14px; }
-  .center { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
-
-  .scard { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 18px 18px 20px; backdrop-filter: blur(12px); animation: rise .8s both; }
-  .scard h3 { margin: 0 0 14px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
-  .scard:nth-child(2) { animation-delay: .08s; } .scard:nth-child(3) { animation-delay: .16s; } .scard:nth-child(4) { animation-delay: .24s; }
-
-  .brand { font-family: var(--serif); font-size: 30px; line-height: 1.05; letter-spacing: -0.01em; }
-  .brand em { color: var(--accent); }
-  .brand-sub { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
-  .month-nav { display: flex; align-items: center; justify-content: space-between; margin-top: 16px; background: rgba(255,255,255,.04); border: 1px solid var(--line); border-radius: 999px; padding: 4px; }
-  .month-nav button { background: transparent; border: 0; color: var(--text); width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-size: 17px; transition: background .25s, transform .25s; }
-  .month-nav button:hover { background: var(--panel-hover); transform: scale(1.1); }
-  .month-label { font-weight: 500; font-size: 13px; }
-
-  .gring { position: relative; width: 150px; aspect-ratio: 1; margin: 2px auto 0; }
-  .gring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
-  .gring circle { fill: none; stroke-width: 9; stroke-linecap: round; }
-  .gring .track { stroke: rgba(255,255,255,0.07); }
-  .gring .prog { stroke: url(#rg); stroke-dasharray: 339.3; stroke-dashoffset: 339.3; transition: stroke-dashoffset 1.4s cubic-bezier(.2,.8,.2,1); filter: drop-shadow(0 0 8px rgba(129,140,248,.5)); }
-  .gring .mid { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; }
-  .gring .gn { font-family: var(--serif); font-size: 44px; line-height: 1; }
-  .gring .gl { font-size: 11px; color: var(--muted); letter-spacing: .1em; margin-top: 4px; }
-  .pace { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 16px; padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 500; border: 1px solid; }
-  .pace::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; box-shadow: 0 0 10px currentColor; animation: pulse 2s ease-in-out infinite; }
-  .pace.good { color: var(--c-offer); border-color: rgba(74,222,128,.3); background: rgba(74,222,128,.08); }
-  .pace.warn { color: var(--c-drafting); border-color: rgba(251,191,36,.3); background: rgba(251,191,36,.08); }
-  .pace.bad { color: var(--c-closed); border-color: rgba(251,113,133,.3); background: rgba(251,113,133,.08); }
-  .big-stat { font-family: var(--serif); font-size: 46px; line-height: 1; }
-  .big-stat small { font-family: var(--sans); font-size: 13px; color: var(--muted); margin-left: 6px; }
-  .stat-note { color: var(--muted); font-size: 12px; margin-top: 8px; line-height: 1.5; }
-  .act { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 13px; }
-  .act .d { color: var(--muted); } .act .t b { font-weight: 600; }
-  .vlist { display: flex; flex-direction: column; gap: 12px; }
-  .vi { display: grid; grid-template-columns: 8px 1fr; gap: 0 10px; font-size: 13px; line-height: 1.4; }
-  .vi::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--c-drafting); box-shadow: 0 0 8px var(--c-drafting); margin-top: 6px; }
-  .vi b { font-weight: 600; display: block; }
-  .vi span { color: var(--muted); font-size: 12px; }
-  .bars { display: flex; align-items: flex-end; gap: 10px; height: 96px; }
-  .bcol { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 6px; height: 100%; }
-  .bcol i { display: block; width: 100%; min-height: 4px; border-radius: 6px 6px 3px 3px; background: linear-gradient(180deg, var(--accent), var(--accent-2)); transition: height .9s cubic-bezier(.2,.8,.2,1); height: 4px; }
-  .bcol i.z { background: rgba(255,255,255,.08); }
-  .bcol small { font-size: 10px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
-  .bcol em { font-style: normal; font-family: var(--serif); font-size: 18px; line-height: 1; }
-  .act-empty { color: var(--muted); font-size: 13px; line-height: 1.5; }
-
-  .legend { display: flex; flex-direction: column; gap: 12px; }
-  .lg { display: grid; grid-template-columns: 1fr auto; gap: 6px 10px; align-items: center; font-size: 13px; }
-  .lg .nm { display: flex; align-items: center; gap: 8px; color: var(--text); }
-  .lg .nm::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--c); box-shadow: 0 0 9px var(--c); }
-  .lg .ct { font-family: var(--serif); font-size: 24px; line-height: 1; color: var(--c); }
-  .lg .tr { grid-column: 1 / -1; height: 5px; border-radius: 999px; background: rgba(255,255,255,.06); overflow: hidden; }
-  .lg .tr i { display: block; height: 100%; width: 0; background: var(--c); border-radius: 999px; transition: width 1s cubic-bezier(.2,.8,.2,1); }
-  .mix { display: flex; height: 12px; border-radius: 999px; overflow: hidden; gap: 3px; }
-  .mix i { display: block; height: 100%; transition: flex .8s; }
-  .mixlegend { display: flex; justify-content: space-between; margin-top: 10px; font-size: 12px; color: var(--muted); }
-  .mixlegend b { color: var(--text); font-weight: 600; }
+  .page { position: relative; z-index: 1; max-width: 980px; margin: 0 auto; padding: 28px clamp(16px, 3vw, 32px) 56px; }
+  .top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 18px; animation: rise .6s both; }
+  .brand { font-family: var(--serif); font-size: 26px; letter-spacing: -0.01em; }
+  .brand em { color: var(--c-applied); }
+  .sub { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); text-align: right; }
 
   /* hero */
   .hero {
-    position: relative; overflow: hidden; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(18px, 3vw, 44px); align-items: center;
-    padding: clamp(24px, 3vw, 44px); border-radius: 28px; border: 1px solid var(--line);
-    background: radial-gradient(700px 320px at 15% 0%, color-mix(in srgb, var(--hc) 22%, transparent), transparent 70%), linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,.015));
+    position: relative; overflow: hidden; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(20px, 4vw, 56px); align-items: center;
+    padding: clamp(26px, 4vw, 52px); border-radius: 30px; border: 1px solid var(--line);
+    background: radial-gradient(700px 320px at 12% 0%, color-mix(in srgb, var(--hc) 24%, transparent), transparent 70%), linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,.015));
     box-shadow: 0 40px 100px -50px var(--hc);
-    animation: rise .8s both;
+    animation: rise .8s .05s both;
   }
-  .hero-count { display: flex; align-items: baseline; gap: 12px; line-height: .8; }
-  .hero-count .num { font-family: var(--serif); font-size: clamp(130px, 13vw, 230px); letter-spacing: -0.04em; background: linear-gradient(180deg, #fff 30%, color-mix(in srgb, var(--hc) 70%, #fff)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .hero-count .of { font-family: var(--serif); font-size: clamp(40px, 4vw, 66px); color: var(--muted); }
-  .hero-label { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 18px; }
+  .count { display: flex; align-items: baseline; gap: 14px; line-height: .8; }
+  .count .num { font-family: var(--serif); font-size: clamp(120px, 16vw, 220px); letter-spacing: -0.04em; background: linear-gradient(180deg, #fff 30%, color-mix(in srgb, var(--hc) 70%, #fff)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .count .of { font-family: var(--serif); font-size: clamp(36px, 4.5vw, 64px); color: var(--muted); }
+  .count-label { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 16px; }
   .banner { display: inline-flex; align-items: center; gap: 10px; padding: 9px 20px; border-radius: 999px; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: #07080c; background: var(--hc); box-shadow: 0 10px 40px -8px var(--hc); }
   .banner::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #07080c; animation: pulse 2s ease-in-out infinite; }
-  .headline { font-family: var(--serif); font-size: clamp(28px, 3vw, 44px); line-height: 1.1; letter-spacing: -0.01em; margin-top: 16px; }
+  .headline { font-family: var(--serif); font-size: clamp(26px, 3.2vw, 42px); line-height: 1.12; letter-spacing: -0.01em; margin-top: 16px; }
   .headline em { color: var(--hc); font-style: italic; }
+  .pips { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 5px; margin-top: 20px; }
+  .pips i { height: 10px; border-radius: 999px; background: rgba(255,255,255,.08); transition: background .6s, box-shadow .6s; }
+  .pips i.on { background: var(--c-applied); box-shadow: 0 0 12px color-mix(in srgb, var(--c-applied) 60%, transparent); }
   .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
   .chip { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; font-size: 12px; color: var(--c); border: 1px solid color-mix(in srgb, var(--c) 40%, transparent); background: color-mix(in srgb, var(--c) 10%, transparent); }
   .chip b { font-family: var(--serif); font-size: 17px; font-weight: 400; }
   .chip.zero { opacity: .35; }
 
-  .sec-head { display: flex; align-items: center; gap: 14px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
-  .sec-head b { color: var(--text); font-weight: 600; }
-  .sec-head::after { content: ""; flex: 1; height: 1px; background: var(--line); }
-
-  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
-  .tile {
-    position: relative; display: flex; flex-direction: column; min-height: 138px; padding: 14px 15px 14px; border-radius: 18px;
-    text-decoration: none; color: inherit; overflow: hidden; opacity: 0; animation: rise .7s cubic-bezier(.2,.8,.2,1) forwards;
-    background: var(--panel); border: 1px solid var(--line); border-top: 4px solid var(--c);
-    transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s, background .3s;
-  }
-  .tile:hover { transform: translateY(-4px); box-shadow: 0 16px 40px -14px color-mix(in srgb, var(--c) 55%, transparent); background: var(--panel-hover); }
-  .tile .ts { font-size: 10px; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; color: var(--c); display: flex; align-items: center; gap: 6px; }
-  .tile .ts::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
-  .tile .tc { font-family: var(--serif); font-size: 26px; line-height: 1.05; margin-top: 10px; }
-  .tile .tr { font-size: 12px; color: var(--muted); margin-top: 5px; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-  .tile .td { font-size: 11px; font-weight: 600; margin-top: 6px; opacity: .85; }
-  .tile .tp { margin-top: auto; padding-top: 10px; font-size: 12px; font-weight: 600; }
-  .tile.done { color: #07080c; border-color: transparent; background: linear-gradient(150deg, var(--c), color-mix(in srgb, var(--c) 60%, #000)); box-shadow: 0 14px 40px -18px var(--c); }
-  .tile.done .ts, .tile.done .tr { color: rgba(7,8,12,.72); }
-  .tile.done .td { color: #07080c; }
-  .tile.done:hover { background: linear-gradient(150deg, var(--c), color-mix(in srgb, var(--c) 60%, #000)); }
-  .tile.dim { filter: saturate(.5) brightness(.75); }
-
-  .feature {
-    position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(210px, 260px); gap: 24px; text-decoration: none; color: inherit; overflow: hidden;
-    padding: clamp(22px, 2.4vw, 34px); border-radius: 24px; border: 1px solid rgba(129,140,248,.35);
-    background: radial-gradient(600px 300px at 0% 0%, rgba(129,140,248,.2), transparent 65%), linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,.015));
-    box-shadow: 0 30px 80px -40px rgba(129,140,248,.6);
-    animation: rise .8s .2s both; transition: transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s;
-  }
-  .feature:hover { transform: translateY(-3px); box-shadow: 0 36px 90px -36px rgba(129,140,248,.8); }
-  .eyebrow { display: flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
-  .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent); animation: pulse 2s ease-in-out infinite; }
-  .f-role { font-family: var(--serif); font-size: clamp(34px, 3.6vw, 56px); line-height: 1.02; letter-spacing: -0.015em; margin-top: 14px; }
-  .f-company { font-size: 17px; color: var(--muted); margin-top: 8px; }
-  .f-pay { font-family: var(--serif); font-size: clamp(34px, 3.4vw, 54px); margin-top: 16px; line-height: 1; background: linear-gradient(90deg, #fff, #c7d2fe 60%, #a5f3fc); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .f-note { margin-top: 14px; font-size: 16px; line-height: 1.6; color: #b9bfd0; }
-  .f-side { display: flex; flex-direction: column; gap: 10px; justify-content: space-between; }
-  .fact { padding: 12px 16px; border-radius: 14px; background: rgba(255,255,255,.04); border: 1px solid var(--line); }
-  .fact .fl { font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
-  .fact .fv { font-family: var(--serif); font-size: 30px; margin-top: 4px; line-height: 1; }
-  .fact .fv.High, .fact .fv.up { color: var(--c-offer); } .fact .fv.Medium { color: var(--c-drafting); } .fact .fv.Low { color: var(--c-closed); }
-  .cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 22px; border-radius: 999px; font-weight: 600; font-size: 15px; color: #0a0c14; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 10px 30px -10px rgba(34,211,238,.6); transition: transform .3s, box-shadow .3s; }
-  .feature:hover .cta { transform: translateX(4px); box-shadow: 0 14px 38px -8px rgba(34,211,238,.8); }
-
-  .tag { font-size: 11px; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); white-space: nowrap; }
-  .tag.fit-High { color: var(--c-offer); border-color: rgba(74,222,128,.3); background: rgba(74,222,128,.08); }
-  .tag.fit-Medium { color: var(--c-drafting); border-color: rgba(251,191,36,.3); background: rgba(251,191,36,.08); }
-  .tag.fit-Low { color: var(--c-closed); border-color: rgba(251,113,133,.3); background: rgba(251,113,133,.08); }
-  .tag.st { color: var(--c); border-color: color-mix(in srgb, var(--c) 35%, transparent); background: color-mix(in srgb, var(--c) 9%, transparent); }
-
-  .queue { display: flex; flex-direction: column; gap: 10px; }
+  /* list */
+  .group { margin-top: 30px; }
+  .gh { display: flex; align-items: center; gap: 14px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+  .gh b { color: var(--text); font-weight: 600; }
+  .gh::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  .list { display: flex; flex-direction: column; gap: 8px; }
   .row {
-    position: relative; display: grid; grid-template-columns: 34px minmax(0, 1fr) auto auto; gap: 8px 22px; align-items: center;
-    padding: 16px 22px 16px 20px; border-radius: 18px; background: var(--panel); border: 1px solid var(--line);
-    text-decoration: none; color: inherit; overflow: hidden; opacity: 0; animation: rise .7s cubic-bezier(.2,.8,.2,1) forwards;
-    transition: transform .35s cubic-bezier(.2,.8,.2,1), background .3s, border-color .3s, box-shadow .35s;
+    position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 6px 22px; align-items: center;
+    padding: 15px 20px 15px 22px; border-radius: 16px; background: var(--panel); border: 1px solid var(--line);
+    text-decoration: none; color: inherit; overflow: hidden; opacity: 0; animation: rise .6s cubic-bezier(.2,.8,.2,1) forwards;
+    transition: transform .3s cubic-bezier(.2,.8,.2,1), background .25s, border-color .25s;
   }
-  .row::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--c); box-shadow: 0 0 14px var(--c); }
-  .row:hover { transform: translateX(5px); background: var(--panel-hover); border-color: color-mix(in srgb, var(--c) 45%, transparent); box-shadow: 0 14px 40px -16px color-mix(in srgb, var(--c) 45%, transparent); }
-  .row.dim { filter: saturate(.45) brightness(.8); }
-  .rank { font-family: var(--serif); font-size: 30px; color: rgba(255,255,255,.25); line-height: 1; }
-  .r-role { font-weight: 600; font-size: 17px; line-height: 1.25; }
-  .r-company { color: var(--muted); font-size: 13px; margin-top: 3px; }
-  .r-note { color: #7d849a; font-size: 12px; line-height: 1.45; margin-top: 6px; }
-  .r-pay { font-family: var(--serif); font-size: clamp(22px, 2vw, 28px); white-space: nowrap; text-align: right; }
-  .r-tags { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
-  .empty-line { padding: 22px; border: 1px dashed var(--line); border-radius: 16px; color: var(--muted); font-size: 14px; text-align: center; }
+  .row::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--c); }
+  .row:hover { transform: translateX(4px); background: var(--panel-hover); border-color: color-mix(in srgb, var(--c) 45%, transparent); }
+  .row.applied { background: color-mix(in srgb, var(--c) 9%, var(--panel)); }
+  .row.closed { opacity: .55 !important; }
+  .r-role { font-weight: 600; font-size: 16px; line-height: 1.25; }
+  .r-meta { color: var(--muted); font-size: 13px; margin-top: 3px; }
+  .r-note { color: #7d849a; font-size: 12px; line-height: 1.45; margin-top: 5px; }
+  .r-pay { font-family: var(--serif); font-size: 24px; white-space: nowrap; text-align: right; }
+  .pill { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; white-space: nowrap; color: var(--c); border: 1px solid color-mix(in srgb, var(--c) 40%, transparent); background: color-mix(in srgb, var(--c) 10%, transparent); }
+  .row.applied .pill { color: #07080c; background: var(--c); border-color: transparent; }
+  .empty { padding: 22px; border: 1px dashed var(--line); border-radius: 16px; color: var(--muted); font-size: 14px; text-align: center; }
 
-  @media (max-width: 1260px) {
-    .layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); max-width: 1100px; margin: 0 auto; }
-    .center { grid-column: 1 / -1; grid-row: 1; }
-    .side { position: static; }
-  }
   @media (max-width: 760px) {
-    .layout { grid-template-columns: 1fr; }
     .hero { grid-template-columns: 1fr; }
-    .feature { grid-template-columns: 1fr; }
     .row { grid-template-columns: minmax(0, 1fr) auto; }
-    .rank { display: none; }
-    .r-mid { grid-column: 1 / -1; }
-    .r-pay { text-align: left; white-space: normal; font-size: 24px; }
-    .r-tags { flex-direction: row; align-items: center; }
+    .r-pay { text-align: left; grid-column: 1; font-size: 22px; }
+    .pill { grid-column: 2; grid-row: 1; }
   }
   @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0ms !important; transition-duration: .01ms !important; } }
 </style>
 </head>
 <body>
 <div class="glow"></div>
-<div class="layout">
-
-  <aside class="side" id="sideL"></aside>
-
-  <main class="center">
-    <section class="hero" id="hero"></section>
-    <div id="tilesWrap"></div>
-    <div id="featWrap"></div>
-    <div id="queueWrap"></div>
-  </main>
-
-  <aside class="side" id="sideR"></aside>
-
+<div class="page">
+  <div class="top">
+    <div class="brand">Job Search <em>Tracker</em></div>
+    <div class="sub" id="sub"></div>
+  </div>
+  <section class="hero" id="hero"></section>
+  <div id="groups"></div>
 </div>
 
 <script>
 (function () {
-  var STATUS = {
+  var COLOR = {
     Found: "var(--c-found)", Drafting: "var(--c-drafting)", Applied: "var(--c-applied)",
     Interview: "var(--c-interview)", Offer: "var(--c-offer)", Rejected: "var(--c-closed)", Passed: "var(--c-closed)"
   };
-  var LABEL = { Found: "Not applied", Drafting: "Drafting", Applied: "Applied", Interview: "Interview", Offer: "Offer", Rejected: "Rejected", Passed: "Passed" };
-  var RANK = { Offer: 0, Interview: 1, Found: 2, Drafting: 2, Applied: 3, Rejected: 4, Passed: 4 };
-  var EYEBROW = { Offer: "Offer on the table", Interview: "Interview in progress", Found: "Apply next", Drafting: "Finish and apply", Applied: "Waiting to hear back", Rejected: "Closed", Passed: "Closed" };
+  var LABEL = { Found: "To apply", Drafting: "In progress", Applied: "Applied", Interview: "Interview", Offer: "Offer", Rejected: "Rejected", Passed: "Passed" };
   var FIT = { High: 3, Medium: 2, Low: 1 };
   var data = { goal: { monthlyApplications: 10 }, jobs: [] };
   var today = new Date();
-  var view = new Date(today.getFullYear(), today.getMonth(), 1);
-  var shown = {};
+  var ym = today.getFullYear() + "-" + String(today.getMonth() + 1).padStart(2, "0");
 
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
   function safeUrl(u) { return /^https?:\/\//i.test(u || "") ? u : null; }
-  function monthKey(d) { return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0"); }
   function parse(s) { var p = s.split("-"); return new Date(+p[0], +p[1] - 1, +p[2]); }
   function fmt(s) { return s ? parse(s).toLocaleDateString(undefined, { month: "short", day: "numeric" }) : ""; }
   function isApplied(j) { return ["Applied", "Interview", "Offer", "Rejected"].indexOf(j.status) !== -1; }
-  function age(s) {
-    if (!s) return "";
-    var d = Math.round((new Date(today.getFullYear(), today.getMonth(), today.getDate()) - parse(s)) / 86400000);
-    return d <= 0 ? "today" : d === 1 ? "yesterday" : d + " days ago";
-  }
-  function countTo(node, key, to) {
-    var from = shown[key] || 0, start = null;
-    shown[key] = to;
+  function isClosed(j) { return j.status === "Rejected" || j.status === "Passed"; }
+  function byFit(a, b) { return (FIT[b.fit] || 0) - (FIT[a.fit] || 0) || (b.payMin || 0) - (a.payMin || 0); }
+  function countTo(node, to) {
+    var start = null;
     function step(t) {
       if (start === null) start = t;
       var k = Math.min(1, (t - start) / 900), e = 1 - Math.pow(1 - k, 3);
-      node.textContent = Math.round(from + (to - from) * e);
+      node.textContent = Math.round(to * e);
       if (k < 1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
   }
-  function kmoney(n) { return "$" + Math.round(n / 1000) + "K"; }
-  function link(j, cls) {
-    var url = safeUrl(j.link);
-    var n = url ? el("a", cls) : el("div", cls);
-    if (url) { n.href = url; n.target = "_blank"; n.rel = "noopener noreferrer"; }
-    return n;
-  }
-  function sec(label, count) {
-    var h = el("div", "sec-head"); h.appendChild(el("b", "", label)); h.appendChild(document.createTextNode(String(count))); return h;
-  }
-  function card(title) { var c = el("div", "scard"); c.appendChild(el("h3", "", title)); return c; }
-  function sorted() {
-    return data.jobs.slice().sort(function (a, b) {
-      return (RANK[a.status] - RANK[b.status]) || (FIT[b.fit] || 0) - (FIT[a.fit] || 0) ||
-        (b.payMin || 0) - (a.payMin || 0) || (b.dateApplied || "").localeCompare(a.dateApplied || "");
-    });
-  }
 
-  /* ---------- hero ---------- */
   function renderHero() {
-    var jobs = data.jobs, total = jobs.length;
-    var applied = jobs.filter(isApplied).length;
-    var c = { Found: 0, Drafting: 0, Applied: 0, Interview: 0, Offer: 0, Closed: 0 };
-    jobs.forEach(function (j) { var k = (j.status === "Rejected" || j.status === "Passed") ? "Closed" : j.status; c[k]++; });
+    var goal = data.goal.monthlyApplications || 10;
+    var jobs = data.jobs;
+    var inMonth = jobs.filter(function (j) { return isApplied(j) && j.dateApplied && j.dateApplied.slice(0, 7) === ym; }).length;
+    var n = function (s) { return jobs.filter(function (j) { return j.status === s; }).length; };
+    var toApply = n("Found") + n("Drafting");
+    var closed = n("Rejected") + n("Passed");
+    var dim = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+    var daysLeft = dim - today.getDate() + 1;
+    var left = Math.max(0, goal - inMonth);
+    var expected = goal * today.getDate() / dim;
 
     var hc, banner, headline;
-    var top = sorted()[0];
-    if (c.Offer) { hc = "var(--c-offer)"; banner = "Offer in hand"; headline = "You have <em>" + c.Offer + "</em> offer" + (c.Offer > 1 ? "s" : "") + " to review."; }
-    else if (c.Interview) { hc = "var(--c-interview)"; banner = "Interviewing"; headline = "<em>" + c.Interview + "</em> in interviews, " + (c.Found + c.Drafting) + " still to apply."; }
-    else if (applied > 0) { hc = "var(--c-applied)"; banner = "In progress"; headline = "<em>" + applied + "</em> applied, " + (c.Found + c.Drafting) + " still to go."; }
-    else if (total > 0) { hc = "var(--c-closed)"; banner = "Not started"; headline = "<em>" + (c.Found + c.Drafting) + "</em> roles ready, none applied yet."; }
-    else { hc = "var(--c-found)"; banner = "No jobs yet"; headline = "Add a role to get started."; }
+    if (n("Offer")) { hc = "var(--c-offer)"; banner = "Offer in hand"; headline = "<em>" + n("Offer") + "</em> offer" + (n("Offer") > 1 ? "s" : "") + " to review."; }
+    else if (n("Interview")) { hc = "var(--c-interview)"; banner = "Interviewing"; headline = "<em>" + n("Interview") + "</em> in interviews. " + inMonth + " applied this month."; }
+    else if (inMonth >= goal) { hc = "var(--c-offer)"; banner = "Goal reached"; headline = "Monthly goal <em>done</em>. Keep the momentum."; }
+    else if (inMonth >= expected) { hc = "var(--c-applied)"; banner = "On pace"; headline = "<em>" + left + "</em> more to hit " + goal + ", with " + daysLeft + " days left."; }
+    else if (inMonth >= expected - 2) { hc = "var(--c-drafting)"; banner = "Slightly behind"; headline = "<em>" + left + "</em> more to hit " + goal + ", with " + daysLeft + " days left."; }
+    else { hc = "var(--c-closed)"; banner = "Behind pace"; headline = "<em>" + left + "</em> more to hit " + goal + ", with " + daysLeft + " days left."; }
 
     var hero = document.getElementById("hero");
     hero.style.setProperty("--hc", hc);
     hero.textContent = "";
 
-    var left = el("div");
-    var cnt = el("div", "hero-count");
-    var num = el("span", "num", "0");
-    cnt.appendChild(num);
-    var of = el("span", "of"); of.textContent = "/ " + total; cnt.appendChild(of);
-    left.appendChild(cnt);
-    left.appendChild(el("div", "hero-label", "Jobs applied to"));
-    hero.appendChild(left);
-    countTo(num, "applied", applied);
+    var l = el("div");
+    var cnt = el("div", "count");
+    var num = el("span", "num", "0"); cnt.appendChild(num);
+    cnt.appendChild(el("span", "of", "/ " + goal));
+    l.appendChild(cnt);
+    l.appendChild(el("div", "count-label", "Applied this month"));
+    hero.appendChild(l);
+    countTo(num, inMonth);
 
-    var right = el("div");
-    right.appendChild(el("span", "banner", banner));
-    var h = el("div", "headline"); h.innerHTML = headline; right.appendChild(h);
+    var r = el("div");
+    r.appendChild(el("span", "banner", banner));
+    var h = el("div", "headline"); h.innerHTML = headline; r.appendChild(h);
+    var pips = el("div", "pips");
+    for (var i = 0; i < goal; i++) pips.appendChild(el("i", i < inMonth ? "on" : ""));
+    r.appendChild(pips);
     var chips = el("div", "chips");
-    [["Found", "Not applied", c.Found], ["Drafting", "Drafting", c.Drafting], ["Applied", "Applied", c.Applied], ["Interview", "Interview", c.Interview], ["Offer", "Offer", c.Offer], ["Rejected", "Closed", c.Closed]]
+    [["Found", "To apply", toApply], ["Applied", "Applied", n("Applied")], ["Interview", "Interview", n("Interview")], ["Offer", "Offer", n("Offer")], ["Rejected", "Closed", closed]]
       .forEach(function (x) {
-        var ch = el("span", "chip" + (x[2] ? "" : " zero"));
-        ch.style.setProperty("--c", STATUS[x[0]]);
-        ch.appendChild(el("b", "", String(x[2]))); ch.appendChild(document.createTextNode(x[1]));
-        chips.appendChild(ch);
+        var c = el("span", "chip" + (x[2] ? "" : " zero"));
+        c.style.setProperty("--c", COLOR[x[0]]);
+        c.appendChild(el("b", "", String(x[2]))); c.appendChild(document.createTextNode(x[1]));
+        chips.appendChild(c);
       });
-    right.appendChild(chips);
-    hero.appendChild(right);
+    r.appendChild(chips);
+    hero.appendChild(r);
+
+    document.getElementById("sub").textContent = today.toLocaleDateString(undefined, { month: "long", year: "numeric" }) +
+      (data.minPay ? " · Remote · $" + Math.round(data.minPay / 1000) + "K+" : "");
   }
 
-  /* ---------- tiles ---------- */
-  function renderTiles() {
-    var wrap = document.getElementById("tilesWrap");
+  function row(j, i) {
+    var url = safeUrl(j.link);
+    var a = url ? el("a") : el("div");
+    a.className = "row" + (isApplied(j) ? " applied" : "") + (isClosed(j) ? " closed" : "");
+    if (url) { a.href = url; a.target = "_blank"; a.rel = "noopener noreferrer"; }
+    a.style.setProperty("--c", COLOR[j.status]);
+    a.style.animationDelay = (0.15 + i * 0.05) + "s";
+    var mid = el("div");
+    mid.appendChild(el("div", "r-role", j.company + " · " + j.role));
+    var meta = isApplied(j) && j.dateApplied ? "Applied " + fmt(j.dateApplied) : (j.fit ? j.fit + " fit" : "");
+    if (meta) mid.appendChild(el("div", "r-meta", meta));
+    if (j.notes && !isApplied(j)) mid.appendChild(el("div", "r-note", j.notes));
+    a.appendChild(mid);
+    a.appendChild(el("div", "r-pay", j.pay || ""));
+    a.appendChild(el("span", "pill", LABEL[j.status]));
+    return a;
+  }
+
+  function renderGroups() {
+    var wrap = document.getElementById("groups");
     wrap.textContent = "";
-    if (!data.jobs.length) { wrap.appendChild(el("div", "empty-line", "No jobs tracked yet.")); return; }
-    wrap.appendChild(sec("Every job at a glance", data.jobs.length));
-    var g = el("div", "tiles"); g.style.marginTop = "12px";
-    sorted().forEach(function (j, i) {
-      var t = link(j, "tile" + (isApplied(j) ? " done" : "") + ((j.status === "Rejected" || j.status === "Passed") ? " dim" : ""));
-      t.style.setProperty("--c", STATUS[j.status]);
-      t.style.animationDelay = (0.15 + i * 0.06) + "s";
-      t.appendChild(el("div", "ts", LABEL[j.status]));
-      t.appendChild(el("div", "tc", j.company));
-      t.appendChild(el("div", "tr", j.role));
-      if (j.dateApplied && isApplied(j)) t.appendChild(el("div", "td", "Applied " + fmt(j.dateApplied)));
-      if (j.pay) t.appendChild(el("div", "tp", j.pay));
-      g.appendChild(t);
+    if (!data.jobs.length) { wrap.appendChild(el("div", "empty", "No jobs tracked yet.")); return; }
+    var defs = [
+      ["In play", function (j) { return j.status === "Offer" || j.status === "Interview"; }],
+      ["To apply", function (j) { return j.status === "Found" || j.status === "Drafting"; }],
+      ["Applied", function (j) { return j.status === "Applied"; }],
+      ["Closed", isClosed]
+    ];
+    var idx = 0;
+    defs.forEach(function (d) {
+      var items = data.jobs.filter(d[1]);
+      if (!items.length) return;
+      items.sort(d[0] === "Applied" ? function (a, b) { return (b.dateApplied || "").localeCompare(a.dateApplied || "") || byFit(a, b); } : byFit);
+      var g = el("div", "group");
+      var gh = el("div", "gh"); gh.appendChild(el("b", "", d[0])); gh.appendChild(document.createTextNode(String(items.length))); g.appendChild(gh);
+      var list = el("div", "list");
+      items.forEach(function (j) { list.appendChild(row(j, idx++)); });
+      g.appendChild(list);
+      wrap.appendChild(g);
     });
-    wrap.appendChild(g);
   }
-
-  /* ---------- feature + queue ---------- */
-  function row(j, idx, delay) {
-    var r = link(j, "row" + ((j.status === "Rejected" || j.status === "Passed") ? " dim" : ""));
-    r.style.setProperty("--c", STATUS[j.status]);
-    r.style.animationDelay = delay + "s";
-    r.appendChild(el("div", "rank", String(idx + 2)));
-    var mid = el("div", "r-mid");
-    mid.appendChild(el("div", "r-role", j.role));
-    mid.appendChild(el("div", "r-company", j.company + (j.dateApplied && isApplied(j) ? " · Applied " + fmt(j.dateApplied) : j.dateFound ? " · Found " + age(j.dateFound) : "")));
-    if (j.notes) mid.appendChild(el("div", "r-note", j.notes));
-    r.appendChild(mid);
-    if (j.pay) r.appendChild(el("div", "r-pay", j.pay));
-    var tg = el("div", "r-tags");
-    var st = el("span", "tag st", LABEL[j.status]); st.style.setProperty("--c", STATUS[j.status]); tg.appendChild(st);
-    if (j.fit) tg.appendChild(el("span", "tag fit-" + j.fit, j.fit + " fit"));
-    r.appendChild(tg);
-    return r;
-  }
-  function renderFocus() {
-    var fw = document.getElementById("featWrap"), qw = document.getElementById("queueWrap");
-    fw.textContent = ""; qw.textContent = "";
-    if (!data.jobs.length) return;
-    var jobs = sorted(), top = jobs[0], rest = jobs.slice(1);
-
-    var f = link(top, "feature");
-    var main = el("div");
-    main.appendChild(el("div", "eyebrow", EYEBROW[top.status] || "Top priority"));
-    main.appendChild(el("div", "f-role", top.role));
-    main.appendChild(el("div", "f-company", top.company));
-    if (top.pay) main.appendChild(el("div", "f-pay", top.pay));
-    if (top.notes) main.appendChild(el("div", "f-note", top.notes));
-    f.appendChild(main);
-
-    var side = el("div", "f-side");
-    function fact(l, v, cls) { var d = el("div", "fact"); d.appendChild(el("div", "fl", l)); d.appendChild(el("div", "fv" + (cls ? " " + cls : ""), v)); side.appendChild(d); }
-    if (top.fit) fact("Fit", top.fit, top.fit);
-    if (top.payMin && data.minPay) { var dl = top.payMin - data.minPay; fact("Vs. " + kmoney(data.minPay) + " floor", dl > 0 ? "+$" + dl.toLocaleString() : "At floor", dl > 0 ? "up" : ""); }
-    fact(top.dateApplied && isApplied(top) ? "Applied" : "Found", top.dateApplied && isApplied(top) ? fmt(top.dateApplied) : (age(top.dateFound) || "—"));
-    side.appendChild(el("span", "cta", (top.status === "Found" || top.status === "Drafting" ? "Open application" : "Open posting") + " →"));
-    f.appendChild(side);
-    fw.appendChild(f);
-
-    if (rest.length) {
-      qw.appendChild(sec("Up next, ranked by priority", rest.length));
-      var q = el("div", "queue"); q.style.marginTop = "12px";
-      rest.forEach(function (j, i) { q.appendChild(row(j, i, 0.3 + i * 0.07)); });
-      qw.appendChild(q);
-    }
-  }
-
-  /* ---------- sidebars ---------- */
-  function renderLeft() {
-    var L = document.getElementById("sideL");
-    L.textContent = "";
-    var goal = data.goal.monthlyApplications || 10;
-    var inMonth = data.jobs.filter(function (j) { return isApplied(j) && j.dateApplied && j.dateApplied.slice(0, 7) === monthKey(view); });
-    var applied = inMonth.length;
-    var isCurrent = monthKey(view) === monthKey(today);
-    var isPast = view < new Date(today.getFullYear(), today.getMonth(), 1);
-
-    var b = el("div", "scard");
-    var brand = el("div", "brand"); brand.appendChild(document.createTextNode("Job Search ")); brand.appendChild(el("em", "", "Tracker")); b.appendChild(brand);
-    b.appendChild(el("div", "brand-sub", "Remote" + (data.minPay ? ", " + kmoney(data.minPay) + " and up" : "")));
-    var nav = el("div", "month-nav");
-    var pv = el("button", "", "‹"); pv.setAttribute("aria-label", "Previous month");
-    var nx = el("button", "", "›"); nx.setAttribute("aria-label", "Next month");
-    pv.onclick = function () { view = new Date(view.getFullYear(), view.getMonth() - 1, 1); renderLeft(); };
-    nx.onclick = function () { view = new Date(view.getFullYear(), view.getMonth() + 1, 1); renderLeft(); };
-    nav.appendChild(pv); nav.appendChild(el("div", "month-label", view.toLocaleDateString(undefined, { month: "long", year: "numeric" }))); nav.appendChild(nx);
-    b.appendChild(nav);
-    L.appendChild(b);
-
-    var g = card("Monthly goal");
-    var pct = Math.min(100, Math.round(applied / goal * 100));
-    var ring = el("div", "gring");
-    ring.innerHTML = '<svg viewBox="0 0 120 120" aria-hidden="true"><defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#818cf8"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs><circle class="track" cx="60" cy="60" r="54"/><circle class="prog" cx="60" cy="60" r="54"/></svg>';
-    var mid = el("div", "mid"); var gn = el("div", "gn", String(applied)); mid.appendChild(gn); mid.appendChild(el("div", "gl", "of " + goal + " applied")); ring.appendChild(mid);
-    g.appendChild(ring);
-    var prog = ring.querySelector(".prog");
-    requestAnimationFrame(function () { requestAnimationFrame(function () { prog.style.strokeDashoffset = 339.3 - 339.3 * pct / 100; }); });
-    var pace = el("div", "pace");
-    var left = Math.max(0, goal - applied);
-    if (applied >= goal) { pace.className = "pace good"; pace.textContent = "Goal reached"; }
-    else if (isPast) { pace.className = "pace bad"; pace.textContent = left + " short of goal"; }
-    else if (!isCurrent) { pace.className = "pace warn"; pace.textContent = "Upcoming month"; }
-    else {
-      var dim = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
-      var expected = goal * today.getDate() / dim;
-      if (applied >= expected) { pace.className = "pace good"; pace.textContent = "On pace"; }
-      else if (applied >= expected - 2) { pace.className = "pace warn"; pace.textContent = "Slightly behind pace"; }
-      else { pace.className = "pace bad"; pace.textContent = "Behind pace"; }
-    }
-    g.appendChild(pace);
-    L.appendChild(g);
-
-    var np = card("Pace needed");
-    if (isCurrent && left > 0) {
-      var daysLeft = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate() - today.getDate() + 1;
-      var perWeek = Math.round(left / (daysLeft / 7) * 10) / 10;
-      var bs = el("div", "big-stat", String(perWeek)); bs.appendChild(el("small", "", "per week")); np.appendChild(bs);
-      np.appendChild(el("div", "stat-note", left + " more to reach " + goal + ", " + daysLeft + " days left this month."));
-    } else if (left === 0) {
-      var bs2 = el("div", "big-stat", "Done"); np.appendChild(bs2);
-      np.appendChild(el("div", "stat-note", "Monthly goal of " + goal + " reached."));
-    } else {
-      var bs3 = el("div", "big-stat", String(left)); bs3.appendChild(el("small", "", "to go")); np.appendChild(bs3);
-      np.appendChild(el("div", "stat-note", "Applications remaining toward " + goal + "."));
-    }
-    L.appendChild(np);
-
-    var ra = card("Recent applications");
-    var recent = data.jobs.filter(function (j) { return isApplied(j) && j.dateApplied; }).sort(function (a, b) { return b.dateApplied.localeCompare(a.dateApplied); }).slice(0, 5);
-    if (recent.length) {
-      var act = el("div", "act");
-      recent.forEach(function (j) { act.appendChild(el("span", "d", fmt(j.dateApplied))); var t = el("span", "t"); t.appendChild(el("b", "", j.company)); act.appendChild(t); });
-      ra.appendChild(act);
-    } else ra.appendChild(el("div", "act-empty", "No applications yet. Each one you submit is logged here."));
-    L.appendChild(ra);
-
-    var vc = card("Verify before applying");
-    var vs = data.jobs.filter(function (j) { return j.notes && /confirm|verify/i.test(j.notes) && !isApplied(j) && j.status !== "Passed"; });
-    if (vs.length) {
-      var vl = el("div", "vlist");
-      vs.forEach(function (j) { var d = el("div", "vi"); var w = el("div"); w.appendChild(el("b", "", j.company)); w.appendChild(el("span", "", j.notes)); d.appendChild(w); vl.appendChild(d); });
-      vc.appendChild(vl);
-    } else vc.appendChild(el("div", "act-empty", "Nothing flagged. Every open role is cleared to apply."));
-    L.appendChild(vc);
-  }
-
-  function renderRight() {
-    var R = document.getElementById("sideR");
-    R.textContent = "";
-    var jobs = data.jobs, total = Math.max(1, jobs.length);
-
-    var pc = card("Pipeline");
-    var legend = el("div", "legend");
-    var counts = { Found: 0, Drafting: 0, Applied: 0, Interview: 0, Offer: 0, Closed: 0 };
-    jobs.forEach(function (j) { var k = (j.status === "Rejected" || j.status === "Passed") ? "Closed" : j.status; counts[k]++; });
-    var bars = [];
-    [["Found", "Not applied", "Found"], ["Drafting", "Drafting", "Drafting"], ["Applied", "Applied", "Applied"], ["Interview", "Interview", "Interview"], ["Offer", "Offer", "Offer"], ["Closed", "Closed", "Rejected"]]
-      .forEach(function (x) {
-        var lg = el("div", "lg"); lg.style.setProperty("--c", STATUS[x[2]]);
-        lg.appendChild(el("span", "nm", x[1])); lg.appendChild(el("span", "ct", String(counts[x[0]])));
-        var tr = el("div", "tr"); var i = el("i"); tr.appendChild(i); lg.appendChild(tr);
-        bars.push([i, counts[x[0]] / total * 100]);
-        legend.appendChild(lg);
-      });
-    pc.appendChild(legend);
-    R.appendChild(pc);
-    requestAnimationFrame(function () { requestAnimationFrame(function () { bars.forEach(function (b) { b[0].style.width = b[1] + "%"; }); }); });
-
-    var fc = card("Fit mix");
-    var fm = { High: 0, Medium: 0, Low: 0 };
-    jobs.forEach(function (j) { if (fm[j.fit] !== undefined) fm[j.fit]++; });
-    var mix = el("div", "mix");
-    [["High", "var(--c-offer)"], ["Medium", "var(--c-drafting)"], ["Low", "var(--c-closed)"]].forEach(function (x) {
-      if (!fm[x[0]]) return;
-      var seg = el("i"); seg.style.background = x[1]; seg.style.flex = String(fm[x[0]]); mix.appendChild(seg);
-    });
-    fc.appendChild(mix);
-    var ml = el("div", "mixlegend");
-    ["High", "Medium", "Low"].forEach(function (k) { var s = el("span"); s.appendChild(el("b", "", String(fm[k]))); s.appendChild(document.createTextNode(" " + k)); ml.appendChild(s); });
-    fc.appendChild(ml);
-    R.appendChild(fc);
-
-    var pay = card("Pay snapshot");
-    var withPay = jobs.filter(function (j) { return j.payMin; });
-    if (withPay.length) {
-      var avg = withPay.reduce(function (s, j) { return s + j.payMin; }, 0) / withPay.length;
-      var best = withPay.slice().sort(function (a, b) { return b.payMin - a.payMin; })[0];
-      var bs = el("div", "big-stat", kmoney(avg)); bs.appendChild(el("small", "", "average floor")); pay.appendChild(bs);
-      pay.appendChild(el("div", "stat-note", "Highest floor: " + best.company + " at " + kmoney(best.payMin) + "."));
-    } else pay.appendChild(el("div", "act-empty", "No pay data yet."));
-    R.appendChild(pay);
-
-    var sa = card("Search age");
-    var dates = jobs.map(function (j) { return j.dateFound; }).filter(Boolean).sort();
-    if (dates.length) {
-      var days = Math.round((new Date(today.getFullYear(), today.getMonth(), today.getDate()) - parse(dates[0])) / 86400000) + 1;
-      sa.appendChild(el("div", "big-stat", "Day " + days));
-      sa.appendChild(el("div", "stat-note", "Started " + fmt(dates[0]) + ". " + jobs.length + " roles found so far."));
-    } else sa.appendChild(el("div", "act-empty", "No roles yet."));
-    R.appendChild(sa);
-
-    var mc = card("Applications by month");
-    var barsEl = el("div", "bars");
-    var cols = [], maxv = 1;
-    for (var k = 3; k >= 0; k--) {
-      var d0 = new Date(today.getFullYear(), today.getMonth() - k, 1);
-      var n = jobs.filter(function (j) { return isApplied(j) && j.dateApplied && j.dateApplied.slice(0, 7) === monthKey(d0); }).length;
-      cols.push([d0.toLocaleDateString(undefined, { month: "short" }), n]); if (n > maxv) maxv = n;
-    }
-    var fills = [];
-    cols.forEach(function (c2) {
-      var col = el("div", "bcol");
-      col.appendChild(el("em", "", String(c2[1])));
-      var bi = el("i", c2[1] ? "" : "z"); col.appendChild(bi);
-      col.appendChild(el("small", "", c2[0]));
-      barsEl.appendChild(col); fills.push([bi, c2[1]]);
-    });
-    mc.appendChild(barsEl);
-    R.appendChild(mc);
-    requestAnimationFrame(function () { requestAnimationFrame(function () { fills.forEach(function (f2) { f2[0].style.height = (f2[1] ? Math.max(8, f2[1] / maxv * 62) : 4) + "px"; }); }); });
-  }
-
-  function renderAll() { renderLeft(); renderHero(); renderTiles(); renderFocus(); renderRight(); }
 
   fetch("data/jobs.json", { cache: "no-store" })
     .then(function (r) { return r.json(); })
-    .then(function (d) { data = d; renderAll(); })
-    .catch(function () { document.getElementById("hero").appendChild(el("div", "empty-line", "Could not load the job data.")); });
+    .then(function (d) { data = d; renderHero(); renderGroups(); })
+    .catch(function () { document.getElementById("hero").appendChild(el("div", "empty", "Could not load the job data.")); });
 })();
 </script>
 </body>

@@ -40,11 +40,11 @@
       "payMin": 70000,
       "link": "https://to.indeed.com/aaws46pjjlkd",
       "dateFound": "2026-11-11",
-      "status": "Found",
+      "status": "Passed",
       "dateApplied": "",
       "contact": "",
       "fit": "Medium",
-      "notes": "Entry-friendly customer success role."
+      "notes": "Requires 2+ years in customer success and the posting is likely closed."
     },
     {
       "id": "procare-hr-csm",
@@ -54,11 +54,11 @@
       "payMin": 75000,
       "link": "https://to.indeed.com/aajmh6swfbhd",
       "dateFound": "2026-11-11",
-      "status": "Found",
+      "status": "Drafting",
       "dateApplied": "",
       "contact": "",
       "fit": "Medium",
-      "notes": "Posted Sept 24. Confirm it is still open."
+      "notes": "Form started on Indeed. Needs home address and a decision on the 3+ years question."
     },
     {
       "id": "sidelines-ops",
@@ -68,8 +68,8 @@
       "payMin": 70000,
       "link": "https://to.indeed.com/aabjcdd6lsnj",
       "dateFound": "2026-11-11",
-      "status": "Found",
-      "dateApplied": "",
+      "status": "Applied",
+      "dateApplied": "2026-11-11",
       "contact": "",
       "fit": "Medium",
       "notes": "Automation work with Claude and n8n. Verify the pay rate."
@@ -86,7 +86,7 @@
       "dateApplied": "",
       "contact": "",
       "fit": "Low",
-      "notes": "Posted Aug 1. Confirm it is still open."
+      "notes": "Applies on the company site, which needs an account."
     },
     {
       "id": "thrive-global-csa",
@@ -110,8 +110,8 @@
       "payMin": 75000,
       "link": "https://to.indeed.com/aad2sbzwr6wv",
       "dateFound": "2026-11-11",
-      "status": "Found",
-      "dateApplied": "",
+      "status": "Applied",
+      "dateApplied": "2026-11-11",
       "contact": "",
       "fit": "Low",
       "notes": "Photo and video skills help. Posted Oct 23. Confirm it is still open."
@@ -124,11 +124,11 @@
       "payMin": 100000,
       "link": "https://to.indeed.com/aa4t6gkrhrjy",
       "dateFound": "2026-11-11",
-      "status": "Found",
+      "status": "Passed",
       "dateApplied": "",
       "contact": "",
       "fit": "Low",
-      "notes": "Stretch. Posted Sept 2. Confirm it is still open."
+      "notes": "Requires 3+ years as a SaaS customer success manager."
     },
     {
       "id": "humana-program-delivery",
@@ -142,7 +142,7 @@
       "dateApplied": "",
       "contact": "",
       "fit": "Low",
-      "notes": "Senior title, likely wants more experience. Stretch."
+      "notes": "Applies on the company site, which needs an account."
     }
   ]
 }
