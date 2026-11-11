@@ -6,7 +6,7 @@
 <title>Job Search Tracker</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #07080c;
@@ -16,6 +16,7 @@
     --text: #eceef4;
     --muted: #8b92a8;
     --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+    --num: "Space Grotesk", Inter, -apple-system, sans-serif;
     --sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
     --c-found: #94a3b8;
@@ -37,7 +38,7 @@
   @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
 
-  .page { position: relative; z-index: 1; max-width: 980px; margin: 0 auto; padding: 28px clamp(16px, 3vw, 32px) 56px; }
+  .page { position: relative; z-index: 1; max-width: 1240px; margin: 0 auto; padding: 28px clamp(16px, 3vw, 32px) 56px; }
   .top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 18px; animation: rise .6s both; }
   .brand { font-family: var(--serif); font-size: 26px; letter-spacing: -0.01em; }
   .brand em { color: var(--c-applied); }
@@ -52,8 +53,8 @@
     animation: rise .8s .05s both;
   }
   .count { display: flex; align-items: baseline; gap: 14px; line-height: .8; }
-  .count .num { font-family: var(--serif); font-size: clamp(120px, 16vw, 220px); letter-spacing: -0.04em; background: linear-gradient(180deg, #fff 30%, color-mix(in srgb, var(--hc) 70%, #fff)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .count .of { font-family: var(--serif); font-size: clamp(36px, 4.5vw, 64px); color: var(--muted); }
+  .count .num { font-family: var(--num); font-weight: 600; font-variant-numeric: tabular-nums; font-size: clamp(120px, 16vw, 220px); letter-spacing: -0.04em; background: linear-gradient(180deg, #fff 30%, color-mix(in srgb, var(--hc) 70%, #fff)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .count .of { font-family: var(--num); font-weight: 400; font-size: clamp(36px, 4.5vw, 64px); color: var(--muted); }
   .count-label { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 16px; }
   .banner { display: inline-flex; align-items: center; gap: 10px; padding: 9px 20px; border-radius: 999px; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: #07080c; background: var(--hc); box-shadow: 0 10px 40px -8px var(--hc); }
   .banner::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #07080c; animation: pulse 2s ease-in-out infinite; }
@@ -64,8 +65,38 @@
   .pips i.on { background: var(--c-applied); box-shadow: 0 0 12px color-mix(in srgb, var(--c-applied) 60%, transparent); }
   .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
   .chip { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; font-size: 12px; color: var(--c); border: 1px solid color-mix(in srgb, var(--c) 40%, transparent); background: color-mix(in srgb, var(--c) 10%, transparent); }
-  .chip b { font-family: var(--serif); font-size: 17px; font-weight: 400; }
+  .chip b { font-family: var(--num); font-size: 16px; font-weight: 600; font-variant-numeric: tabular-nums; }
   .chip.zero { opacity: .35; }
+
+
+  .layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 28px; align-items: start; }
+  .side { position: sticky; top: 20px; display: flex; flex-direction: column; gap: 14px; animation: rise .8s .15s both; }
+  .card { border: 1px solid var(--line); border-radius: 22px; padding: 20px; background: linear-gradient(160deg, rgba(255,255,255,.055), rgba(255,255,255,.015)); }
+  .card h3 { margin: 0 0 14px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  .big { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .big div { text-align: left; }
+  .big b { display: block; font-family: var(--num); font-weight: 600; font-size: 28px; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+  .big span { font-size: 11px; color: var(--muted); letter-spacing: .06em; }
+  .m { margin-top: 14px; }
+  .m:first-of-type { margin-top: 0; }
+  .m-top { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; }
+  .m-top b { font-family: var(--num); font-weight: 600; font-variant-numeric: tabular-nums; font-size: 15px; }
+  .m-top span { color: var(--muted); }
+  .bar { position: relative; height: 8px; border-radius: 999px; background: rgba(255,255,255,.08); margin-top: 8px; overflow: hidden; }
+  .bar i { position: absolute; top: 0; bottom: 0; left: 0; border-radius: 999px; background: var(--c-applied); transition: width .8s cubic-bezier(.2,.8,.2,1); }
+  .m.now .bar i { background: linear-gradient(90deg, var(--c-applied), var(--c-interview)); }
+  .m.future { opacity: .55; }
+  .note { font-size: 11.5px; line-height: 1.5; color: #7d849a; margin-top: 12px; }
+
+  .meters { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 12px; max-width: 420px; }
+  .mt { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); display: flex; justify-content: space-between; }
+  .mt b { font-family: var(--num); font-weight: 600; letter-spacing: 0; color: var(--text); font-size: 11px; font-variant-numeric: tabular-nums; }
+  .track { position: relative; height: 6px; border-radius: 999px; background: rgba(255,255,255,.08); margin-top: 6px; }
+  .track .fill { position: absolute; top: 0; bottom: 0; border-radius: 999px; }
+  .track.pay .fill { background: linear-gradient(90deg, var(--c-interview), var(--c-offer)); }
+  .track.odds .fill { left: 0; background: linear-gradient(90deg, var(--c-drafting), var(--c-offer)); }
+  .track .floor { position: absolute; left: 0; top: -3px; bottom: -3px; width: 2px; background: rgba(255,255,255,.35); }
+  .row .r-body { min-width: 0; }
 
   /* list */
   .group { margin-top: 30px; }
@@ -86,11 +117,15 @@
   .r-role { font-weight: 600; font-size: 16px; line-height: 1.25; }
   .r-meta { color: var(--muted); font-size: 13px; margin-top: 3px; }
   .r-note { color: #7d849a; font-size: 12px; line-height: 1.45; margin-top: 5px; }
-  .r-pay { font-family: var(--serif); font-size: 24px; white-space: nowrap; text-align: right; }
+  .r-pay { font-family: var(--num); font-weight: 600; font-size: 19px; font-variant-numeric: tabular-nums; white-space: nowrap; text-align: right; }
   .pill { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; white-space: nowrap; color: var(--c); border: 1px solid color-mix(in srgb, var(--c) 40%, transparent); background: color-mix(in srgb, var(--c) 10%, transparent); }
   .row.applied .pill { color: #07080c; background: var(--c); border-color: transparent; }
   .empty { padding: 22px; border: 1px dashed var(--line); border-radius: 16px; color: var(--muted); font-size: 14px; text-align: center; }
 
+  @media (max-width: 1020px) {
+    .layout { grid-template-columns: 1fr; }
+    .side { position: static; }
+  }
   @media (max-width: 760px) {
     .hero { grid-template-columns: 1fr; }
     .row { grid-template-columns: minmax(0, 1fr) auto; }
@@ -107,8 +142,13 @@
     <div class="brand">Job Search <em>Tracker</em></div>
     <div class="sub" id="sub"></div>
   </div>
-  <section class="hero" id="hero"></section>
-  <div id="groups"></div>
+  <div class="layout">
+    <main>
+      <section class="hero" id="hero"></section>
+      <div id="groups"></div>
+    </main>
+    <aside class="side" id="side"></aside>
+  </div>
 </div>
 
 <script>
@@ -195,6 +235,24 @@
       (data.minPay ? " · Remote · $" + Math.round(data.minPay / 1000) + "K+" : "");
   }
 
+  var PAY_LO = 60000, PAY_HI = 120000;
+  function pct(v) { return Math.max(0, Math.min(100, (v - PAY_LO) / (PAY_HI - PAY_LO) * 100)); }
+  function meters(j) {
+    var wrap = el("div", "meters");
+    var p = el("div"), pt = el("div", "mt"); pt.appendChild(el("span", "", "Pay")); pt.appendChild(el("b", "", "$" + Math.round(j.payMin / 1000) + (j.payMax && j.payMax !== j.payMin ? "-" + Math.round(j.payMax / 1000) : "") + "K"));
+    p.appendChild(pt);
+    var tr = el("div", "track pay"), f = el("span", "fill");
+    var l = pct(j.payMin), r = pct(j.payMax || j.payMin);
+    f.style.left = l + "%"; f.style.width = Math.max(r - l, 3) + "%";
+    tr.appendChild(f); var fl = el("span", "floor"); fl.style.left = pct(data.minPay || 70000) + "%"; tr.appendChild(fl);
+    p.appendChild(tr); wrap.appendChild(p);
+    var o = el("div"), ot = el("div", "mt"); ot.appendChild(el("span", "", "Odds")); ot.appendChild(el("b", "", j.odds + "%"));
+    o.appendChild(ot);
+    var t2 = el("div", "track odds"), f2 = el("span", "fill"); f2.style.width = j.odds + "%"; t2.appendChild(f2);
+    o.appendChild(t2); wrap.appendChild(o);
+    return wrap;
+  }
+
   function row(j, i) {
     var url = safeUrl(j.link);
     var a = url ? el("a") : el("div");
@@ -206,11 +264,49 @@
     mid.appendChild(el("div", "r-role", j.company + " · " + j.role));
     var meta = isApplied(j) && j.dateApplied ? "Applied " + fmt(j.dateApplied) : (j.fit ? j.fit + " fit" : "");
     if (meta) mid.appendChild(el("div", "r-meta", meta));
-    if (j.notes && !isApplied(j)) mid.appendChild(el("div", "r-note", j.notes));
+    if (j.notes && !isApplied(j) && !isClosed(j)) mid.appendChild(el("div", "r-note", j.notes));
+    if (j.odds != null && j.payMin && !isClosed(j)) mid.appendChild(meters(j));
     a.appendChild(mid);
     a.appendChild(el("div", "r-pay", j.pay || ""));
     a.appendChild(el("span", "pill", LABEL[j.status]));
     return a;
+  }
+
+  function renderSide() {
+    var side = document.getElementById("side");
+    side.textContent = "";
+    var goal = data.goal.monthlyApplications || 10, jobs = data.jobs;
+    var active = jobs.filter(function (j) { return !isClosed(j); });
+    var applied = jobs.filter(isApplied).length;
+    var live = active.filter(function (j) { return j.odds != null; });
+    var avgOdds = live.length ? Math.round(live.reduce(function (a, j) { return a + j.odds; }, 0) / live.length) : 0;
+    var avgPay = live.length ? Math.round(live.reduce(function (a, j) { return a + ((j.payMin + (j.payMax || j.payMin)) / 2); }, 0) / live.length / 1000) : 0;
+
+    var c1 = el("div", "card"); c1.appendChild(el("h3", "", "Overview"));
+    var big = el("div", "big");
+    [[String(applied), "applied"], [String(avgOdds) + "%", "avg odds"], ["$" + avgPay + "K", "avg pay"]].forEach(function (x) {
+      var d = el("div"); d.appendChild(el("b", "", x[0])); d.appendChild(el("span", "", x[1])); big.appendChild(d);
+    });
+    c1.appendChild(big); side.appendChild(c1);
+
+    var c2 = el("div", "card"); c2.appendChild(el("h3", "", "Monthly goal"));
+    for (var k = 0; k < 3; k++) {
+      var d = new Date(today.getFullYear(), today.getMonth() + k, 1);
+      var key = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0");
+      var n = jobs.filter(function (j) { return isApplied(j) && j.dateApplied && j.dateApplied.slice(0, 7) === key; }).length;
+      var m = el("div", "m" + (k === 0 ? " now" : n ? "" : " future"));
+      var top = el("div", "m-top");
+      top.appendChild(el("span", "", d.toLocaleDateString(undefined, { month: "long" })));
+      top.appendChild(el("b", "", n + " / " + goal));
+      m.appendChild(top);
+      var bar = el("div", "bar"), fill = el("i"); fill.style.width = Math.min(100, n / goal * 100) + "%"; bar.appendChild(fill); m.appendChild(bar);
+      c2.appendChild(m);
+    }
+    side.appendChild(c2);
+
+    var c3 = el("div", "card"); c3.appendChild(el("h3", "", "Reading the meters"));
+    c3.appendChild(el("div", "note", "Pay bar runs from $60K to $120K. The white tick marks the $" + Math.round((data.minPay || 70000) / 1000) + "K floor. Odds is an estimate of landing an interview, based on how closely the posting matches the resume. It is not a prediction."));
+    side.appendChild(c3);
   }
 
   function renderGroups() {
@@ -239,7 +335,7 @@
 
   fetch("data/jobs.json", { cache: "no-store" })
     .then(function (r) { return r.json(); })
-    .then(function (d) { data = d; renderHero(); renderGroups(); })
+    .then(function (d) { data = d; renderHero(); renderSide(); renderGroups(); })
     .catch(function () { document.getElementById("hero").appendChild(el("div", "empty", "Could not load the job data.")); });
 })();
 </script>

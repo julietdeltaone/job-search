@@ -18,3 +18,6 @@ The monthly counter counts jobs with an applied-type status and a `dateApplied` 
 ## Publish
 
 GitHub Pages: Settings, Pages, deploy from branch `main`, folder `/ (root)`. No build step.
+
+
+Optional fields used by the dashboard meters: `payMax` (top of the pay range, number) and `odds` (0 to 100, an estimate of the chance of an interview).

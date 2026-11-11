@@ -16,7 +16,9 @@
       "dateApplied": "2026-11-11",
       "contact": "",
       "fit": "High",
-      "notes": "Supports health-professions programs. NY is an eligible state."
+      "notes": "Supports health-professions programs. NY is an eligible state.",
+      "payMax": 100000,
+      "odds": 60
     },
     {
       "id": "care-inf-ops",
@@ -30,21 +32,9 @@
       "dateApplied": "2026-11-11",
       "contact": "",
       "fit": "High",
-      "notes": "Nursing-education startup. Confirm the company is legitimate before applying."
-    },
-    {
-      "id": "onit-smb-csm",
-      "company": "OnIT",
-      "role": "SMB Customer Success Manager, ContractWorks",
-      "pay": "$70,000 - $85,000",
-      "payMin": 70000,
-      "link": "https://to.indeed.com/aaws46pjjlkd",
-      "dateFound": "2026-11-11",
-      "status": "Passed",
-      "dateApplied": "",
-      "contact": "",
-      "fit": "Medium",
-      "notes": "Requires 2+ years in customer success and the posting is likely closed."
+      "notes": "Nursing-education startup. Confirm the company is legitimate before applying.",
+      "payMax": 100000,
+      "odds": 55
     },
     {
       "id": "procare-hr-csm",
@@ -54,11 +44,13 @@
       "payMin": 75000,
       "link": "https://to.indeed.com/aajmh6swfbhd",
       "dateFound": "2026-11-11",
-      "status": "Drafting",
+      "status": "Passed",
       "dateApplied": "",
       "contact": "",
       "fit": "Medium",
-      "notes": "Form started on Indeed. Needs home address and a decision on the 3+ years question."
+      "notes": "Asks for 3+ years customer-facing experience. Outside the well-within-experience rule.",
+      "payMax": 80000,
+      "odds": 30
     },
     {
       "id": "sidelines-ops",
@@ -72,21 +64,9 @@
       "dateApplied": "2026-11-11",
       "contact": "",
       "fit": "Medium",
-      "notes": "Automation work with Claude and n8n. Verify the pay rate."
-    },
-    {
-      "id": "zeeba-hr-admin",
-      "company": "Zeeba Automotive Group",
-      "role": "HR/Admin Specialist",
-      "pay": "$70,000 - $85,000",
-      "payMin": 70000,
-      "link": "https://to.indeed.com/aalpzqrhkkkw",
-      "dateFound": "2026-11-11",
-      "status": "Found",
-      "dateApplied": "",
-      "contact": "",
-      "fit": "Low",
-      "notes": "Applies on the company site, which needs an account."
+      "notes": "Automation work with Claude and n8n. Verify the pay rate.",
+      "payMax": 70000,
+      "odds": 40
     },
     {
       "id": "thrive-global-csa",
@@ -100,7 +80,9 @@
       "dateApplied": "2026-11-11",
       "contact": "",
       "fit": "Medium",
-      "notes": "Associate level. Posted Oct 7. Confirm it is still open."
+      "notes": "Associate level. Posted Oct 7. Confirm it is still open.",
+      "payMax": 85000,
+      "odds": 45
     },
     {
       "id": "uneekor-ecom",
@@ -114,35 +96,42 @@
       "dateApplied": "2026-11-11",
       "contact": "",
       "fit": "Low",
-      "notes": "Photo and video skills help. Posted Oct 23. Confirm it is still open."
+      "notes": "Photo and video skills help. Posted Oct 23. Confirm it is still open.",
+      "payMax": 85000,
+      "odds": 30
     },
     {
-      "id": "vividly-csm",
-      "company": "Vividly",
-      "role": "Customer Success Manager",
-      "pay": "$100,000 - $110,000",
-      "payMin": 100000,
-      "link": "https://to.indeed.com/aa4t6gkrhrjy",
-      "dateFound": "2026-11-11",
-      "status": "Passed",
-      "dateApplied": "",
-      "contact": "",
-      "fit": "Low",
-      "notes": "Requires 3+ years as a SaaS customer success manager."
-    },
-    {
-      "id": "humana-program-delivery",
-      "company": "Humana",
-      "role": "Senior Program Delivery Professional",
-      "pay": "$86,300 - $118,700",
-      "payMin": 86300,
-      "link": "https://to.indeed.com/aacf8dzck6bz",
+      "id": "westport-dpc",
+      "company": "Westport Properties",
+      "role": "Data Project Coordinator",
+      "pay": "$70,000 - $80,000",
+      "payMin": 70000,
+      "payMax": 80000,
+      "odds": 50,
+      "link": "https://to.indeed.com/aadjf48s6zpx",
       "dateFound": "2026-11-11",
       "status": "Found",
       "dateApplied": "",
       "contact": "",
-      "fit": "Low",
-      "notes": "Applies on the company site, which needs an account."
+      "fit": "Medium",
+      "notes": "Bachelor's, project coordination, Excel and tracking tools. Apps Script and GitHub work help. Pacific hours, NY is eligible."
+    },
+    {
+      "id": "commons-bizops",
+      "company": "Commons Clinic",
+      "role": "Business Operations Associate, AI-Enabled Operations",
+      "pay": "$95,000 - $110,000",
+      "payMin": 95000,
+      "payMax": 110000,
+      "odds": 35,
+      "link": "https://to.indeed.com/aat4pvgkyv7z",
+      "dateFound": "2026-11-11",
+      "status": "Found",
+      "dateApplied": "",
+      "contact": "",
+      "fit": "Medium",
+      "notes": "Asks for 2-4 years in business operations or analytics. The AI-built Apps Script tools are the proof point."
     }
-  ]
+  ],
+  "oddsNote": "Odds are my estimate of the chance of an interview, based on how closely the posting matches the resume. They are not a prediction."
 }
