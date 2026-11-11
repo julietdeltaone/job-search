@@ -38,7 +38,7 @@
   @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
 
-  .page { position: relative; z-index: 1; max-width: 1240px; margin: 0 auto; padding: 28px clamp(16px, 3vw, 32px) 56px; }
+  .page { position: relative; z-index: 1; max-width: 1560px; margin: 0 auto; padding: 28px clamp(16px, 3vw, 32px) 56px; }
   .top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 18px; animation: rise .6s both; }
   .brand { font-family: var(--serif); font-size: 26px; letter-spacing: -0.01em; }
   .brand em { color: var(--c-applied); }
@@ -69,7 +69,7 @@
   .chip.zero { opacity: .35; }
 
 
-  .layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 28px; align-items: start; }
+  .layout { display: grid; grid-template-columns: 270px minmax(0, 1fr) 390px; gap: 26px; align-items: start; }
   .side { position: sticky; top: 20px; display: flex; flex-direction: column; gap: 14px; animation: rise .8s .15s both; }
   .card { border: 1px solid var(--line); border-radius: 22px; padding: 20px; background: linear-gradient(160deg, rgba(255,255,255,.055), rgba(255,255,255,.015)); }
   .card h3 { margin: 0 0 14px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
@@ -98,6 +98,45 @@
   .track .floor { position: absolute; left: 0; top: -3px; bottom: -3px; width: 2px; background: rgba(255,255,255,.35); }
   .row .r-body { min-width: 0; }
 
+
+  .row { cursor: pointer; }
+  .row.sel { background: var(--panel-hover); border-color: color-mix(in srgb, var(--c) 70%, transparent); box-shadow: 0 0 0 1px color-mix(in srgb, var(--c) 40%, transparent); }
+  .row:focus-visible { outline: 2px solid var(--c-applied); outline-offset: 2px; }
+  .detail { position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow-y: auto; border: 1px solid var(--line); border-radius: 24px; padding: 24px; background: linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,.015)); animation: rise .8s .2s both; scrollbar-width: thin; }
+  .d-empty { color: var(--muted); font-size: 14px; line-height: 1.6; text-align: center; padding: 60px 10px; }
+  .d-close { display: none; position: absolute; top: 14px; right: 14px; width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); background: var(--panel); color: var(--text); font-size: 18px; cursor: pointer; }
+  .d-co { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .d-role { font-size: 20px; font-weight: 600; line-height: 1.25; margin: 6px 0 12px; padding-right: 30px; }
+  .d-score { display: flex; align-items: flex-end; gap: 14px; margin-top: 18px; }
+  .d-score b { font-family: var(--num); font-weight: 600; font-size: 68px; line-height: .85; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+  .d-score b small { font-size: 28px; color: var(--muted); font-weight: 400; }
+  .d-tag { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; padding: 5px 12px; border-radius: 999px; margin-bottom: 4px; }
+  .d-tag.strong { color: #07080c; background: var(--c-offer); }
+  .d-tag.decent { color: #07080c; background: var(--c-drafting); }
+  .d-tag.long { color: #07080c; background: var(--c-closed); }
+  .d-h { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin: 26px 0 12px; display: flex; gap: 12px; align-items: center; }
+  .d-h::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  .f { margin-bottom: 16px; }
+  .f-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; font-size: 13.5px; font-weight: 500; }
+  .f-top em { font-style: normal; font-family: var(--num); font-weight: 600; font-variant-numeric: tabular-nums; font-size: 14px; }
+  .f-top span { color: var(--muted); font-size: 11.5px; font-weight: 400; margin-left: 6px; }
+  .f .track { margin-top: 7px; }
+  .f .track .fill { left: 0; background: linear-gradient(90deg, var(--c-applied), var(--c-interview)); }
+  .f p { margin: 7px 0 0; font-size: 12.5px; line-height: 1.55; color: #a2a9bd; }
+  .sum { display: flex; justify-content: space-between; font-size: 13px; padding-top: 12px; border-top: 1px solid var(--line); color: var(--muted); }
+  .sum b { font-family: var(--num); color: var(--text); font-weight: 600; font-size: 15px; }
+  .ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .ul li { position: relative; padding-left: 18px; font-size: 13px; line-height: 1.5; color: #c4c9d8; }
+  .ul li::before { content: ""; position: absolute; left: 0; top: .6em; width: 7px; height: 7px; border-radius: 50%; background: var(--k); }
+  .ul.up { --k: var(--c-offer); } .ul.down { --k: var(--c-closed); }
+  .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
+  .facts div span { display: block; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .facts div b { display: block; font-family: var(--num); font-weight: 600; font-size: 15px; margin-top: 3px; font-variant-numeric: tabular-nums; }
+  .d-note { font-size: 13px; line-height: 1.6; color: #c4c9d8; }
+  .d-next { font-size: 13.5px; line-height: 1.55; padding: 14px 16px; border-radius: 14px; background: color-mix(in srgb, var(--c-applied) 12%, transparent); border: 1px solid color-mix(in srgb, var(--c-applied) 35%, transparent); }
+  .d-link { display: block; text-align: center; margin-top: 20px; padding: 12px; border-radius: 14px; background: var(--text); color: #07080c; font-weight: 600; font-size: 14px; text-decoration: none; }
+  .scrim { display: none; }
+
   /* list */
   .group { margin-top: 30px; }
   .gh { display: flex; align-items: center; gap: 14px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
@@ -122,9 +161,18 @@
   .row.applied .pill { color: #07080c; background: var(--c); border-color: transparent; }
   .empty { padding: 22px; border: 1px dashed var(--line); border-radius: 16px; color: var(--muted); font-size: 14px; text-align: center; }
 
-  @media (max-width: 1020px) {
+  @media (max-width: 1240px) {
+    .layout { grid-template-columns: 250px minmax(0, 1fr); }
+    .detail { position: fixed; top: 0; right: 0; bottom: 0; width: min(430px, 100vw); max-height: none; border-radius: 24px 0 0 24px; z-index: 20; background: #0d0f16; transform: translateX(105%); transition: transform .35s cubic-bezier(.2,.8,.2,1); animation: none; }
+    body.open .detail { transform: none; }
+    .d-close { display: block; }
+    .scrim { display: block; position: fixed; inset: 0; z-index: 15; background: rgba(0,0,0,.55); opacity: 0; pointer-events: none; transition: opacity .3s; }
+    body.open .scrim { opacity: 1; pointer-events: auto; }
+  }
+  @media (max-width: 900px) {
     .layout { grid-template-columns: 1fr; }
     .side { position: static; }
+    .detail { border-radius: 0; }
   }
   @media (max-width: 760px) {
     .hero { grid-template-columns: 1fr; }
@@ -143,11 +191,13 @@
     <div class="sub" id="sub"></div>
   </div>
   <div class="layout">
+    <aside class="side" id="side"></aside>
     <main>
       <section class="hero" id="hero"></section>
       <div id="groups"></div>
     </main>
-    <aside class="side" id="side"></aside>
+    <aside class="detail" id="detail" aria-label="Job details"></aside>
+    <div class="scrim" id="scrim"></div>
   </div>
 </div>
 
@@ -235,6 +285,84 @@
       (data.minPay ? " · Remote · $" + Math.round(data.minPay / 1000) + "K+" : "");
   }
 
+
+  var selected = null;
+  function oddsOf(j) {
+    if (!j.breakdown) return null;
+    return Math.round(j.breakdown.reduce(function (a, f) { return a + f.weight * f.score; }, 0) / 100);
+  }
+  function money(n) { return "$" + Math.round(n / 1000) + "K"; }
+  function section(box, title) { box.appendChild(el("div", "d-h", title)); }
+  function list(box, cls, items) {
+    var ul = el("ul", "ul " + cls);
+    items.forEach(function (t) { ul.appendChild(el("li", "", t)); });
+    box.appendChild(ul);
+  }
+  function renderDetail() {
+    var box = document.getElementById("detail");
+    box.textContent = "";
+    var j = data.jobs.filter(function (x) { return x.id === selected; })[0];
+    if (!j) { box.appendChild(el("div", "d-empty", "Select a job to see how the odds were worked out and what to do next.")); return; }
+    var close = el("button", "d-close", "\u00d7"); close.setAttribute("aria-label", "Close"); close.addEventListener("click", deselect); box.appendChild(close);
+    box.appendChild(el("div", "d-co", j.company));
+    box.appendChild(el("div", "d-role", j.role));
+    var pill = el("span", "pill", LABEL[j.status]); pill.style.setProperty("--c", COLOR[j.status]); box.appendChild(pill);
+
+    var odds = oddsOf(j);
+    if (odds !== null) {
+      var sc = el("div", "d-score");
+      var b = el("b", "", String(odds)); b.appendChild(el("small", "", "%")); sc.appendChild(b);
+      var tag = odds >= 60 ? ["strong", "Strong"] : odds >= 45 ? ["decent", "Decent"] : ["long", "Long shot"];
+      sc.appendChild(el("span", "d-tag " + tag[0], tag[1]));
+      box.appendChild(sc);
+      box.appendChild(el("div", "r-note", "Estimated chance of an interview. It is my estimate from how closely the posting matches your resume, not a prediction."));
+
+      section(box, "How the number is built");
+      j.breakdown.forEach(function (f) {
+        var d = el("div", "f"), t = el("div", "f-top");
+        var l = el("div"); l.appendChild(document.createTextNode(f.factor)); l.appendChild(el("span", "", f.weight + "% of total"));
+        t.appendChild(l); t.appendChild(el("em", "", f.score + " / 100"));
+        d.appendChild(t);
+        var tr = el("div", "track"), fl = el("span", "fill"); fl.style.width = f.score + "%"; tr.appendChild(fl); d.appendChild(tr);
+        d.appendChild(el("p", "", f.note));
+        box.appendChild(d);
+      });
+      var sum = el("div", "sum"); sum.appendChild(el("span", "", "Each score times its weight, added up")); sum.appendChild(el("b", "", String(odds) + "%")); box.appendChild(sum);
+
+      if (j.helps && j.helps.length) { section(box, "Working for you"); list(box, "up", j.helps); }
+      if (j.hurts && j.hurts.length) { section(box, "Working against you"); list(box, "down", j.hurts); }
+    }
+
+    section(box, "The job");
+    var f = el("div", "facts");
+    function fact(k, v) { if (!v) return; var d = el("div"); d.appendChild(el("span", "", k)); d.appendChild(el("b", "", v)); f.appendChild(d); }
+    fact("Pay", j.pay);
+    fact("Pay vs $" + Math.round((data.minPay || 70000) / 1000) + "K floor", j.payMin ? (j.payMin >= (data.minPay || 70000) ? "+" + money(j.payMin - (data.minPay || 70000)) + " at the low end" : "Below floor") : "");
+    fact("Found", fmt(j.dateFound));
+    fact("Applied", fmt(j.dateApplied));
+    fact("Fit", j.fit);
+    fact("Contact", j.contact);
+    box.appendChild(f);
+
+    if (j.notes) { section(box, "Notes"); box.appendChild(el("div", "d-note", j.notes)); }
+    if (j.next && !isClosed(j)) { section(box, "Next step"); box.appendChild(el("div", "d-next", j.next)); }
+    var url = safeUrl(j.link);
+    if (url) { var a = el("a", "d-link", "Open posting"); a.href = url; a.target = "_blank"; a.rel = "noopener noreferrer"; box.appendChild(a); }
+    box.scrollTop = 0;
+  }
+  function select(id) {
+    selected = id;
+    Array.prototype.forEach.call(document.querySelectorAll(".row"), function (r) { r.classList.toggle("sel", r.dataset.id === id); });
+    renderDetail();
+    document.body.classList.add("open");
+  }
+  function deselect() {
+    document.body.classList.remove("open");
+    if (window.matchMedia("(min-width: 1241px)").matches) { selected = null; Array.prototype.forEach.call(document.querySelectorAll(".row"), function (r) { r.classList.remove("sel"); }); renderDetail(); }
+  }
+  document.getElementById("scrim").addEventListener("click", deselect);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") deselect(); });
+
   var PAY_LO = 60000, PAY_HI = 120000;
   function pct(v) { return Math.max(0, Math.min(100, (v - PAY_LO) / (PAY_HI - PAY_LO) * 100)); }
   function meters(j) {
@@ -246,18 +374,19 @@
     f.style.left = l + "%"; f.style.width = Math.max(r - l, 3) + "%";
     tr.appendChild(f); var fl = el("span", "floor"); fl.style.left = pct(data.minPay || 70000) + "%"; tr.appendChild(fl);
     p.appendChild(tr); wrap.appendChild(p);
-    var o = el("div"), ot = el("div", "mt"); ot.appendChild(el("span", "", "Odds")); ot.appendChild(el("b", "", j.odds + "%"));
+    var o = el("div"), ot = el("div", "mt"); ot.appendChild(el("span", "", "Odds")); ot.appendChild(el("b", "", oddsOf(j) + "%"));
     o.appendChild(ot);
-    var t2 = el("div", "track odds"), f2 = el("span", "fill"); f2.style.width = j.odds + "%"; t2.appendChild(f2);
+    var t2 = el("div", "track odds"), f2 = el("span", "fill"); f2.style.width = oddsOf(j) + "%"; t2.appendChild(f2);
     o.appendChild(t2); wrap.appendChild(o);
     return wrap;
   }
 
   function row(j, i) {
-    var url = safeUrl(j.link);
-    var a = url ? el("a") : el("div");
+    var a = el("div");
     a.className = "row" + (isApplied(j) ? " applied" : "") + (isClosed(j) ? " closed" : "");
-    if (url) { a.href = url; a.target = "_blank"; a.rel = "noopener noreferrer"; }
+    a.setAttribute("role", "button"); a.tabIndex = 0; a.dataset.id = j.id;
+    a.addEventListener("click", function () { select(j.id); });
+    a.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(j.id); } });
     a.style.setProperty("--c", COLOR[j.status]);
     a.style.animationDelay = (0.15 + i * 0.05) + "s";
     var mid = el("div");
@@ -265,7 +394,7 @@
     var meta = isApplied(j) && j.dateApplied ? "Applied " + fmt(j.dateApplied) : (j.fit ? j.fit + " fit" : "");
     if (meta) mid.appendChild(el("div", "r-meta", meta));
     if (j.notes && !isApplied(j) && !isClosed(j)) mid.appendChild(el("div", "r-note", j.notes));
-    if (j.odds != null && j.payMin && !isClosed(j)) mid.appendChild(meters(j));
+    if (oddsOf(j) !== null && j.payMin && !isClosed(j)) mid.appendChild(meters(j));
     a.appendChild(mid);
     a.appendChild(el("div", "r-pay", j.pay || ""));
     a.appendChild(el("span", "pill", LABEL[j.status]));
@@ -278,8 +407,8 @@
     var goal = data.goal.monthlyApplications || 10, jobs = data.jobs;
     var active = jobs.filter(function (j) { return !isClosed(j); });
     var applied = jobs.filter(isApplied).length;
-    var live = active.filter(function (j) { return j.odds != null; });
-    var avgOdds = live.length ? Math.round(live.reduce(function (a, j) { return a + j.odds; }, 0) / live.length) : 0;
+    var live = active.filter(function (j) { return oddsOf(j) !== null; });
+    var avgOdds = live.length ? Math.round(live.reduce(function (a, j) { return a + oddsOf(j); }, 0) / live.length) : 0;
     var avgPay = live.length ? Math.round(live.reduce(function (a, j) { return a + ((j.payMin + (j.payMax || j.payMin)) / 2); }, 0) / live.length / 1000) : 0;
 
     var c1 = el("div", "card"); c1.appendChild(el("h3", "", "Overview"));
@@ -305,7 +434,7 @@
     side.appendChild(c2);
 
     var c3 = el("div", "card"); c3.appendChild(el("h3", "", "Reading the meters"));
-    c3.appendChild(el("div", "note", "Pay bar runs from $60K to $120K. The white tick marks the $" + Math.round((data.minPay || 70000) / 1000) + "K floor. Odds is an estimate of landing an interview, based on how closely the posting matches the resume. It is not a prediction."));
+    c3.appendChild(el("div", "note", "Click any job for the full breakdown. Pay bar runs from $60K to $120K. The white tick marks the $" + Math.round((data.minPay || 70000) / 1000) + "K floor. Odds is an estimate of landing an interview, based on how closely the posting matches the resume. It is not a prediction."));
     side.appendChild(c3);
   }
 
@@ -335,7 +464,7 @@
 
   fetch("data/jobs.json", { cache: "no-store" })
     .then(function (r) { return r.json(); })
-    .then(function (d) { data = d; renderHero(); renderSide(); renderGroups(); })
+    .then(function (d) { data = d; renderHero(); renderSide(); renderGroups(); renderDetail(); })
     .catch(function () { document.getElementById("hero").appendChild(el("div", "empty", "Could not load the job data.")); });
 })();
 </script>

@@ -21,3 +21,5 @@ GitHub Pages: Settings, Pages, deploy from branch `main`, folder `/ (root)`. No 
 
 
 Optional fields used by the dashboard meters: `payMax` (top of the pay range, number) and `odds` (0 to 100, an estimate of the chance of an interview).
+
+Optional per-job fields for the detail panel: `breakdown` (list of {factor, weight, score, note}; odds is the weighted sum), `helps`, `hurts`, `next`.

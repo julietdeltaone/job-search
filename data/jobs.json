@@ -18,7 +18,49 @@
       "fit": "High",
       "notes": "Supports health-professions programs. NY is an eligible state.",
       "payMax": 100000,
-      "odds": 60
+      "odds": 62,
+      "breakdown": [
+        {
+          "factor": "Experience match",
+          "weight": 35,
+          "score": 70,
+          "note": "Entry-to-mid customer success role. Your airline customer work and health-program admin line up with it."
+        },
+        {
+          "factor": "Skills match",
+          "weight": 25,
+          "score": 60,
+          "note": "You support health-professions programs every day at Clarkson, which is the exact audience this company serves."
+        },
+        {
+          "factor": "Role fit",
+          "weight": 20,
+          "score": 65,
+          "note": "Title says specialist, not manager, so the level matches where you are."
+        },
+        {
+          "factor": "Competition",
+          "weight": 10,
+          "score": 40,
+          "note": "Remote customer success roles pull large applicant pools."
+        },
+        {
+          "factor": "Pay vs level",
+          "weight": 10,
+          "score": 55,
+          "note": "The $75-100K range starts above your current pay. The low end is realistic, the top end is not."
+        }
+      ],
+      "helps": [
+        "Daily work inside health-professions programs",
+        "Airline experience giving customers bad news calmly",
+        "NY is an eligible state"
+      ],
+      "hurts": [
+        "No formal customer success title on the resume",
+        "Large applicant pool"
+      ],
+      "next": "Applied Nov 11. If there is no reply in a week, send the recruiter a short follow-up."
     },
     {
       "id": "care-inf-ops",
@@ -34,7 +76,49 @@
       "fit": "High",
       "notes": "Nursing-education startup. Confirm the company is legitimate before applying.",
       "payMax": 100000,
-      "odds": 55
+      "odds": 57,
+      "breakdown": [
+        {
+          "factor": "Experience match",
+          "weight": 35,
+          "score": 60,
+          "note": "Operations coordinator at a founding-stage company. You run program operations and build your own tools, which is close to the job."
+        },
+        {
+          "factor": "Skills match",
+          "weight": 25,
+          "score": 60,
+          "note": "Apps Script tools, trackers and scheduling match the hands-on operations work."
+        },
+        {
+          "factor": "Role fit",
+          "weight": 20,
+          "score": 60,
+          "note": "Founding hires need people who set up processes from nothing. The tools you built show that."
+        },
+        {
+          "factor": "Competition",
+          "weight": 10,
+          "score": 45,
+          "note": "A startup posting reaches fewer people than a big-company posting."
+        },
+        {
+          "factor": "Pay vs level",
+          "weight": 10,
+          "score": 45,
+          "note": "$80-100K is a stretch above your current pay for a coordinator title."
+        }
+      ],
+      "helps": [
+        "Built your own operations tools",
+        "Nursing education fits your health-sciences background",
+        "Startups hire on proof of work more than titles"
+      ],
+      "hurts": [
+        "Company is small and was not independently verified",
+        "Founding roles often want prior startup experience"
+      ],
+      "next": "Applied Nov 11. Look the company up on LinkedIn before any interview."
     },
     {
       "id": "procare-hr-csm",
@@ -49,8 +133,7 @@
       "contact": "",
       "fit": "Medium",
       "notes": "Asks for 3+ years customer-facing experience. Outside the well-within-experience rule.",
-      "payMax": 80000,
-      "odds": 30
+      "payMax": 80000
     },
     {
       "id": "sidelines-ops",
@@ -66,7 +149,48 @@
       "fit": "Medium",
       "notes": "Automation work with Claude and n8n. Verify the pay rate.",
       "payMax": 70000,
-      "odds": 40
+      "odds": 45,
+      "breakdown": [
+        {
+          "factor": "Experience match",
+          "weight": 35,
+          "score": 45,
+          "note": "Business operations coordinator. The admin and process work matches. The sports betting affiliate industry is new to you."
+        },
+        {
+          "factor": "Skills match",
+          "weight": 25,
+          "score": 50,
+          "note": "The role centers on automation with Claude and n8n. You already build with AI and scripts."
+        },
+        {
+          "factor": "Role fit",
+          "weight": 20,
+          "score": 45,
+          "note": "Coordinator title matches your level."
+        },
+        {
+          "factor": "Competition",
+          "weight": 10,
+          "score": 40,
+          "note": "Remote operations roles are popular."
+        },
+        {
+          "factor": "Pay vs level",
+          "weight": 10,
+          "score": 35,
+          "note": "Pay is listed as $60-75 an hour, which does not convert cleanly to a salary. Confirm the real rate."
+        }
+      ],
+      "helps": [
+        "AI automation work matches how you already build tools",
+        "Coordinator title is at your level"
+      ],
+      "hurts": [
+        "Pay is unclear",
+        "iGaming industry is new to you, and may not suit you"
+      ],
+      "next": "Applied Nov 11. Ask for the real pay rate if they reach out."
     },
     {
       "id": "thrive-global-csa",
@@ -82,7 +206,48 @@
       "fit": "Medium",
       "notes": "Associate level. Posted Oct 7. Confirm it is still open.",
       "payMax": 85000,
-      "odds": 45
+      "odds": 47,
+      "breakdown": [
+        {
+          "factor": "Experience match",
+          "weight": 35,
+          "score": 50,
+          "note": "Associate level, so the experience bar is lower, but it is still a customer success job and you have not held that title."
+        },
+        {
+          "factor": "Skills match",
+          "weight": 25,
+          "score": 45,
+          "note": "Customer communication fits. Software customer success tools and metrics are new to you."
+        },
+        {
+          "factor": "Role fit",
+          "weight": 20,
+          "score": 50,
+          "note": "Associate is below your target level, which helps your odds but limits the upside."
+        },
+        {
+          "factor": "Competition",
+          "weight": 10,
+          "score": 30,
+          "note": "Posted around Oct 7, so many people have likely already applied."
+        },
+        {
+          "factor": "Pay vs level",
+          "weight": 10,
+          "score": 55,
+          "note": "$75-85K is a realistic range for the level."
+        }
+      ],
+      "helps": [
+        "Associate level is reachable",
+        "Customer-facing experience from the airline"
+      ],
+      "hurts": [
+        "Older posting, may already be filled",
+        "No customer success software background"
+      ],
+      "next": "Applied Nov 11. Check that the posting is still open before spending more time on it."
     },
     {
       "id": "uneekor-ecom",
@@ -98,7 +263,47 @@
       "fit": "Low",
       "notes": "Photo and video skills help. Posted Oct 23. Confirm it is still open.",
       "payMax": 85000,
-      "odds": 30
+      "odds": 35,
+      "breakdown": [
+        {
+          "factor": "Experience match",
+          "weight": 35,
+          "score": 30,
+          "note": "E-commerce specialist roles usually want hands-on store or marketplace experience, which you do not have."
+        },
+        {
+          "factor": "Skills match",
+          "weight": 25,
+          "score": 35,
+          "note": "Photo and video skills from JD Meyers Productions help with product content. Store tools and analytics are gaps."
+        },
+        {
+          "factor": "Role fit",
+          "weight": 20,
+          "score": 35,
+          "note": "This is the weakest fit of the group and was a longer reach from the start."
+        },
+        {
+          "factor": "Competition",
+          "weight": 10,
+          "score": 35,
+          "note": "Posted around Oct 23, so the pool is partly formed already."
+        },
+        {
+          "factor": "Pay vs level",
+          "weight": 10,
+          "score": 50,
+          "note": "$75-85K is in range for the level."
+        }
+      ],
+      "helps": [
+        "Photo and video skills for product content"
+      ],
+      "hurts": [
+        "No e-commerce platform experience",
+        "Weakest match on the list"
+      ],
+      "next": "Applied Nov 11. Treat this one as a long shot and put time into stronger matches."
     },
     {
       "id": "westport-dpc",
@@ -107,14 +312,56 @@
       "pay": "$70,000 - $80,000",
       "payMin": 70000,
       "payMax": 80000,
-      "odds": 50,
+      "odds": 52,
       "link": "https://to.indeed.com/aadjf48s6zpx",
       "dateFound": "2026-11-11",
       "status": "Found",
       "dateApplied": "",
       "contact": "",
       "fit": "Medium",
-      "notes": "Bachelor's, project coordination, Excel and tracking tools. Apps Script and GitHub work help. Pacific hours, NY is eligible."
+      "notes": "Bachelor's, project coordination, Excel and tracking tools. Apps Script and GitHub work help. Pacific hours, NY is eligible.",
+      "breakdown": [
+        {
+          "factor": "Experience match",
+          "weight": 35,
+          "score": 55,
+          "note": "Wants a bachelor's degree and project coordination in a data, IT or operations setting. You have the degree and run tracked projects at Clarkson."
+        },
+        {
+          "factor": "Skills match",
+          "weight": 25,
+          "score": 50,
+          "note": "Excel, a ticket or project tool, and plain-language reporting fit. SQL, Python and Git are listed as familiarity, and you have GitHub and Apps Script."
+        },
+        {
+          "factor": "Role fit",
+          "weight": 20,
+          "score": 55,
+          "note": "Coordinator title and intake, scoping and status reporting match how you already work."
+        },
+        {
+          "factor": "Competition",
+          "weight": 10,
+          "score": 45,
+          "note": "Posted Oct 12, so some applicants are already in."
+        },
+        {
+          "factor": "Pay vs level",
+          "weight": 10,
+          "score": 50,
+          "note": "$70-80K sits at your floor, so the level and pay line up."
+        }
+      ],
+      "helps": [
+        "Degree requirement met",
+        "Apps Script and GitHub work show technical comfort",
+        "Status tracking is what you do now"
+      ],
+      "hurts": [
+        "Pacific hours: 8am to 5pm Pacific is 11am to 8pm Eastern",
+        "SQL experience is thin"
+      ],
+      "next": "Apply this week on Indeed. Lead with the tools you built and the projects you track."
     },
     {
       "id": "commons-bizops",
@@ -123,14 +370,56 @@
       "pay": "$95,000 - $110,000",
       "payMin": 95000,
       "payMax": 110000,
-      "odds": 35,
+      "odds": 37,
       "link": "https://to.indeed.com/aat4pvgkyv7z",
       "dateFound": "2026-11-11",
       "status": "Found",
       "dateApplied": "",
       "contact": "",
       "fit": "Medium",
-      "notes": "Asks for 2-4 years in business operations or analytics. The AI-built Apps Script tools are the proof point."
+      "notes": "Asks for 2-4 years in business operations or analytics. The AI-built Apps Script tools are the proof point.",
+      "breakdown": [
+        {
+          "factor": "Experience match",
+          "weight": 35,
+          "score": 35,
+          "note": "Asks for 2-4 years in business operations, consulting or analytics. Your admin and program operations work is related but not the same."
+        },
+        {
+          "factor": "Skills match",
+          "weight": 25,
+          "score": 50,
+          "note": "The posting wants proof of redesigning a process with AI. Your Apps Script tools are that proof, if you can state a measurable result."
+        },
+        {
+          "factor": "Role fit",
+          "weight": 20,
+          "score": 35,
+          "note": "Associate title, but the scope is revenue cycle and payer work, which is new to you."
+        },
+        {
+          "factor": "Competition",
+          "weight": 10,
+          "score": 40,
+          "note": "Posted Oct 28 at a high pay band, so expect many applicants."
+        },
+        {
+          "factor": "Pay vs level",
+          "weight": 10,
+          "score": 15,
+          "note": "$95-110K is well above your current level. This is the biggest pay jump on the list."
+        }
+      ],
+      "helps": [
+        "AI-built tools match the central ask",
+        "Posting says it will teach the healthcare billing side",
+        "Handling confidential records is part of your job"
+      ],
+      "hurts": [
+        "No consulting or analytics title",
+        "Pay band is far above your current level"
+      ],
+      "next": "Apply this week. Put a number on what your tools saved, such as hours per week."
     }
   ],
   "oddsNote": "Odds are my estimate of the chance of an interview, based on how closely the posting matches the resume. They are not a prediction."
