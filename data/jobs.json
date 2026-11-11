@@ -1,5 +1,7 @@
 {
-  "goal": { "monthlyApplications": 10 },
+  "goal": {
+    "monthlyApplications": 10
+  },
   "minPay": 70000,
   "jobs": [
     {
@@ -85,6 +87,62 @@
       "contact": "",
       "fit": "Low",
       "notes": "Posted Aug 1. Confirm it is still open."
+    },
+    {
+      "id": "thrive-global-csa",
+      "company": "Thrive Global",
+      "role": "Customer Success Associate",
+      "pay": "$75,000 - $85,000",
+      "payMin": 75000,
+      "link": "https://to.indeed.com/aa2h8nspnyh4",
+      "dateFound": "2026-11-11",
+      "status": "Found",
+      "dateApplied": "",
+      "contact": "",
+      "fit": "Medium",
+      "notes": "Associate level. Posted Oct 7. Confirm it is still open."
+    },
+    {
+      "id": "uneekor-ecom",
+      "company": "Uneekor",
+      "role": "E-commerce Specialist",
+      "pay": "$75,000 - $85,000",
+      "payMin": 75000,
+      "link": "https://to.indeed.com/aad2sbzwr6wv",
+      "dateFound": "2026-11-11",
+      "status": "Found",
+      "dateApplied": "",
+      "contact": "",
+      "fit": "Low",
+      "notes": "Photo and video skills help. Posted Oct 23. Confirm it is still open."
+    },
+    {
+      "id": "vividly-csm",
+      "company": "Vividly",
+      "role": "Customer Success Manager",
+      "pay": "$100,000 - $110,000",
+      "payMin": 100000,
+      "link": "https://to.indeed.com/aa4t6gkrhrjy",
+      "dateFound": "2026-11-11",
+      "status": "Found",
+      "dateApplied": "",
+      "contact": "",
+      "fit": "Low",
+      "notes": "Stretch. Posted Sept 2. Confirm it is still open."
+    },
+    {
+      "id": "humana-program-delivery",
+      "company": "Humana",
+      "role": "Senior Program Delivery Professional",
+      "pay": "$86,300 - $118,700",
+      "payMin": 86300,
+      "link": "https://to.indeed.com/aacf8dzck6bz",
+      "dateFound": "2026-11-11",
+      "status": "Found",
+      "dateApplied": "",
+      "contact": "",
+      "fit": "Low",
+      "notes": "Senior title, likely wants more experience. Stretch."
     }
   ]
 }
