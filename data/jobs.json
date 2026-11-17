@@ -475,11 +475,11 @@
       "payMax": 70000,
       "link": "https://jobs.ashbyhq.com/river/3e9850fe-8a07-4618-b21b-2b860bf59cca",
       "dateFound": "2026-11-17",
-      "status": "Found",
-      "dateApplied": "",
+      "status": "Applied",
+      "dateApplied": "2026-11-17",
       "contact": "",
       "fit": "Medium",
-      "notes": "Entry-level role at a bitcoin financial services company. Applies on the company site. The form has no state restriction, only a US Eastern or Central time zone question. It asks three open questions about why River, a proud achievement and interest in bitcoin.",
+      "notes": "Submitted on the company site Nov 17. Confirmation page shown.",
       "breakdown": [
         {
           "factor": "Experience match",
@@ -522,7 +522,6 @@
         "Fintech background is missing",
         "Form asks why you want to work in bitcoin, so a real answer is needed"
       ],
-      "next": "Needs your own answers to the three open questions on the form. Then Claude submits.",
       "odds": 59
     }
   ]
