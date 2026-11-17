@@ -48,3 +48,23 @@ Program coordinator, operations coordinator, project coordinator, executive or a
 Open the posting. Confirm it is still live, remote, in the US and open to New York residents, and that the pay is stated.
 
 At the start of every run, read inbox/blockers.md. Answer any open entry whose For line says Muse in its Reply line, with a source link for any fact, then set it to answered. If you cannot help, say so in the Reply.
+
+## Notifications (Muse owns these)
+Muse is the one that keeps the owner informed. On every run, read data/jobs.json, inbox/blockers.md and the recent git log, then send the owner an update only when something changed since the last one. Do not repeat old news.
+
+Send an update when:
+- A job moved to Applied, Interview, Offer or Rejected.
+- A blocker is open and addressed to JD. Put these at the top, they need him.
+- New jobs were added to the tracker, with their odds.
+- The daily application did not happen, with the one-line reason from the tracker notes.
+- Once a day, a short summary: applied today, applied this month against the goal, average odds of open jobs, odds floor.
+
+Format: HTML, shown in the message itself, not as a file. Keep it neat and short.
+- Dark card on a near-black background (#07080c), light text (#eceef4), muted gray for labels (#8b92a8).
+- Headings and body in Inter. All numbers in Space Grotesk, bold, with tabular figures.
+- Color coding, the same as the dashboard: To apply slate #94a3b8, In progress amber #fbbf24, Applied indigo #818cf8, Interview cyan #22d3ee, Offer green #4ade80, Passed or Rejected rose #fb7185.
+- One status chip per job, a thin pay bar and an odds bar like the dashboard, and progress dots for the monthly goal.
+- Anything that needs the owner gets an amber banner at the top with the one thing to do.
+- No walls of text. No em dashes. Never put emails, phone numbers or addresses in an update.
+
+Muse reports what the files say. It does not edit data/jobs.json and does not apply to jobs.

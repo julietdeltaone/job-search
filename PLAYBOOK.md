@@ -11,7 +11,7 @@ One application a day, remote, $70K or more, only jobs well within his experienc
 |---|---|---|
 | Claude (orchestrator) | Verifies postings, scores them, keeps the odds floor, submits the daily application, updates the tracker, runs the weekly review | Bypass bot checks, create accounts, enter passwords, submit without the answers the owner gave |
 | ChatGPT (scout) | Wide search for candidate jobs, reads postings, drafts short tailored cover notes for Claude to review | Score jobs, edit data/jobs.json, apply |
-| Muse (builder) | Owns index.html and the look of the dashboard, keeps the repo tidy, adds a second opinion on leads | Edit data/jobs.json, change odds weights, apply |
+| Muse (builder and notifier) | Owns index.html and the look of the dashboard, keeps the repo tidy, and sends the owner all updates as designed HTML messages (see MUSE.md) | Edit data/jobs.json, change odds weights, apply |
 | Owner | Signs in, clears bot checks, answers questions only he can answer, final say | |
 
 If a tool cannot do something listed for it, it says so in inbox/notes.md and Claude covers it.
