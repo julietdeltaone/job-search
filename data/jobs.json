@@ -465,6 +465,65 @@
         "Pay band is far above your current level"
       ],
       "next": "Apply this week. Put a number on what your tools saved, such as hours per week."
+    },
+    {
+      "id": "river-clientops",
+      "company": "River",
+      "role": "Client Operations Associate",
+      "pay": "$70,000",
+      "payMin": 70000,
+      "payMax": 70000,
+      "link": "https://jobs.ashbyhq.com/river/3e9850fe-8a07-4618-b21b-2b860bf59cca",
+      "dateFound": "2026-11-17",
+      "status": "Found",
+      "dateApplied": "",
+      "contact": "",
+      "fit": "Medium",
+      "notes": "Entry-level role at a bitcoin financial services company. Applies on the company site. New York eligibility is not stated.",
+      "breakdown": [
+        {
+          "factor": "Experience match",
+          "weight": 35,
+          "score": 65,
+          "note": "Labeled entry level with no years required. Customer-facing experience is asked for and you have it from the airline."
+        },
+        {
+          "factor": "Skills match",
+          "weight": 25,
+          "score": 60,
+          "note": "Sheets and data trends are named. SQL is a plus, not required. Crypto and fintech are new to you."
+        },
+        {
+          "factor": "Role fit",
+          "weight": 20,
+          "score": 65,
+          "note": "Client questions, process fixes and acting as liaison to internal teams match how you work now."
+        },
+        {
+          "factor": "Competition",
+          "weight": 10,
+          "score": 35,
+          "note": "Posted about 12 days ago on a major job board. Expect a large pool."
+        },
+        {
+          "factor": "Pay vs level",
+          "weight": 10,
+          "score": 45,
+          "note": "$70,000 is right at your floor and is a modest step up."
+        }
+      ],
+      "helps": [
+        "Entry level, so no years-of-experience wall",
+        "Customer-facing and spreadsheet work match",
+        "Builds operations processes, like your Apps Script tools"
+      ],
+      "hurts": [
+        "Pay sits exactly at the floor",
+        "New York eligibility is not stated, and crypto companies often restrict New York",
+        "Fintech background is missing"
+      ],
+      "next": "Check the application form for a state question before filling it out. If New York is excluded, mark Passed.",
+      "odds": 59
     }
   ]
 }
