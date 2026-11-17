@@ -202,6 +202,17 @@
 </div>
 
 <script>
+/*
+  NOTE FOR MUSE (and anyone else editing this file)
+  - This page is plain HTML, CSS and JS. There is no build step. Keep it that way.
+  - All data comes from data/jobs.json. To add or change a job, edit that file, not this one.
+  - Odds are computed in oddsOf() below from each job's "breakdown" scores and the weights in model.factors.
+    Never hard-code an odds number.
+  - The odds floor (oddsFloor()) is the minimum odds a new job needs before it is worth applying to.
+    Jobs under the floor show a "Below floor" flag. Do not lower the floor to make a job fit.
+  - Build DOM with el() and textContent. Do not use innerHTML with job data.
+  - Read MUSE.md in the repo root for the full job-adding workflow.
+*/
 (function () {
   var COLOR = {
     Found: "var(--c-found)", Drafting: "var(--c-drafting)", Applied: "var(--c-applied)",
@@ -287,10 +298,23 @@
 
 
   var selected = null;
+  // Weight for a factor comes from model.factors in jobs.json, so tuning happens in one place.
+  function weightOf(f) {
+    var m = (data.model && data.model.factors) || [];
+    for (var i = 0; i < m.length; i++) if (m[i].factor === f.factor) return m[i].weight;
+    return f.weight;
+  }
   function oddsOf(j) {
     if (!j.breakdown) return null;
-    return Math.round(j.breakdown.reduce(function (a, f) { return a + f.weight * f.score; }, 0) / 100);
+    return Math.round(j.breakdown.reduce(function (a, f) { return a + weightOf(f) * f.score; }, 0) / 100);
   }
+  // Minimum odds for the current date. The schedule lives in model.oddsFloor and only goes up over time.
+  function oddsFloor() {
+    var steps = (data.model && data.model.oddsFloor) || [], now = ymd(today), min = 0;
+    steps.forEach(function (s) { if (s.from <= now) min = s.min; });
+    return min;
+  }
+  function ymd(d) { return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
   function money(n) { return "$" + Math.round(n / 1000) + "K"; }
   function section(box, title) { box.appendChild(el("div", "d-h", title)); }
   function list(box, cls, items) {
@@ -320,7 +344,7 @@
       section(box, "How the number is built");
       j.breakdown.forEach(function (f) {
         var d = el("div", "f"), t = el("div", "f-top");
-        var l = el("div"); l.appendChild(document.createTextNode(f.factor)); l.appendChild(el("span", "", f.weight + "% of total"));
+        var l = el("div"); l.appendChild(document.createTextNode(f.factor)); l.appendChild(el("span", "", weightOf(f) + "% of total"));
         t.appendChild(l); t.appendChild(el("em", "", f.score + " / 100"));
         d.appendChild(t);
         var tr = el("div", "track"), fl = el("span", "fill"); fl.style.width = f.score + "%"; tr.appendChild(fl); d.appendChild(tr);
@@ -392,6 +416,8 @@
     var mid = el("div");
     mid.appendChild(el("div", "r-role", j.company + " · " + j.role));
     var meta = isApplied(j) && j.dateApplied ? "Applied " + fmt(j.dateApplied) : (j.fit ? j.fit + " fit" : "");
+    var od = oddsOf(j);
+    if (od !== null && od < oddsFloor() && !isApplied(j) && !isClosed(j)) meta += " \u00b7 Below " + oddsFloor() + "% floor";
     if (meta) mid.appendChild(el("div", "r-meta", meta));
     if (j.notes && !isApplied(j) && !isClosed(j)) mid.appendChild(el("div", "r-note", j.notes));
     if (oddsOf(j) !== null && j.payMin && !isClosed(j)) mid.appendChild(meters(j));
@@ -417,6 +443,17 @@
       var d = el("div"); d.appendChild(el("b", "", x[0])); d.appendChild(el("span", "", x[1])); big.appendChild(d);
     });
     c1.appendChild(big); side.appendChild(c1);
+
+    var perDay = data.goal.dailyApplications || 1;
+    var todayN = jobs.filter(function (j) { return isApplied(j) && j.dateApplied === ymd(today); }).length;
+    var c0 = el("div", "card"); c0.appendChild(el("h3", "", "Today"));
+    var tm = el("div", "m now"), tt = el("div", "m-top");
+    tt.appendChild(el("span", "", "Applications")); tt.appendChild(el("b", "", todayN + " / " + perDay)); tm.appendChild(tt);
+    var tb = el("div", "bar"), tf = el("i"); tf.style.width = Math.min(100, todayN / perDay * 100) + "%"; tb.appendChild(tf); tm.appendChild(tb);
+    c0.appendChild(tm);
+    var fl = oddsFloor(), under = active.filter(function (j) { var o = oddsOf(j); return o !== null && o < fl && !isApplied(j); }).length;
+    c0.appendChild(el("div", "note", "Odds floor " + fl + "%. New jobs below it are flagged" + (under ? " (" + under + " now)" : "") + ". The floor steps up each month."));
+    side.appendChild(c0);
 
     var c2 = el("div", "card"); c2.appendChild(el("h3", "", "Monthly goal"));
     for (var k = 0; k < 3; k++) {

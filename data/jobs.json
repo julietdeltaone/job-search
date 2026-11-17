@@ -1,8 +1,53 @@
 {
+  "_readme": "Muse: read MUSE.md in the repo root before editing this file. Every job needs a breakdown (5 scores) and the odds are computed from model.factors weights. Do not type an odds number by hand.",
   "goal": {
-    "monthlyApplications": 10
+    "monthlyApplications": 20,
+    "dailyApplications": 1
   },
   "minPay": 70000,
+  "model": {
+    "_note": "Odds = sum(weight x score) / 100. Weights are tuned here, in one place. Change them only with a reason written in changeLog.",
+    "factors": [
+      {
+        "factor": "Experience match",
+        "weight": 35
+      },
+      {
+        "factor": "Skills match",
+        "weight": 25
+      },
+      {
+        "factor": "Role fit",
+        "weight": 20
+      },
+      {
+        "factor": "Competition",
+        "weight": 10
+      },
+      {
+        "factor": "Pay vs level",
+        "weight": 10
+      }
+    ],
+    "oddsFloor": [
+      {
+        "from": "2026-11-17",
+        "min": 45
+      },
+      {
+        "from": "2026-12-01",
+        "min": 55
+      },
+      {
+        "from": "2027-01-01",
+        "min": 60
+      }
+    ],
+    "changeLog": [
+      "2026-11-17: Added a minimum-odds floor that steps up each month. Weights unchanged. Odds rise only by picking better-matched jobs, not by changing the scoring."
+    ]
+  },
+  "oddsNote": "Odds are my estimate of the chance of an interview, based on how closely the posting matches the resume. They are not a prediction.",
   "jobs": [
     {
       "id": "sketchy-css",
@@ -421,6 +466,5 @@
       ],
       "next": "Apply this week. Put a number on what your tools saved, such as hours per week."
     }
-  ],
-  "oddsNote": "Odds are my estimate of the chance of an interview, based on how closely the posting matches the resume. They are not a prediction."
+  ]
 }
