@@ -1,5 +1,7 @@
 # Notes for Muse
 
+Read PLAYBOOK.md first. Your lane: index.html, the look of the dashboard, and repo tidiness. Claude owns data/jobs.json. Scouts add raw leads to inbox/leads.json.
+
 This repo tracks a remote job search. The page (index.html) reads data/jobs.json. Read this before changing anything.
 
 ## What the owner wants

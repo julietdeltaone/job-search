@@ -1,0 +1,4 @@
+{
+  "_readme": "Scouts (Muse, ChatGPT) add raw leads here. Claude verifies, scores and moves good ones into data/jobs.json, then clears them. Do not add scores or odds. See PLAYBOOK.md.",
+  "leads": []
+}
