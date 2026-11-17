@@ -46,3 +46,5 @@ Program coordinator, operations coordinator, project coordinator, executive or a
 
 ## Check before adding
 Open the posting. Confirm it is still live, remote, in the US and open to New York residents, and that the pay is stated.
+
+At the start of every run, read inbox/blockers.md. Answer any open entry whose For line says Muse in its Reply line, with a source link for any fact, then set it to answered. If you cannot help, say so in the Reply.

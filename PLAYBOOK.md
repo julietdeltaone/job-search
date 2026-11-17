@@ -22,6 +22,18 @@ If a tool cannot do something listed for it, it says so in inbox/notes.md and Cl
 3. Muse changes only index.html and README. Claude reviews any change that touches how odds are computed.
 4. Only one writer per file. data/jobs.json: Claude. index.html: Muse. inbox/leads.json: scouts, then Claude clears it.
 
+## When blocked (priority order)
+1. Try another way yourself first, such as a different source or the next-best job.
+2. If a helper could unblock it, add an entry to inbox/blockers.md addressed to ChatGPT or Muse and move on to other work. Do not wait for the reply.
+3. Only ask the owner for what only he can give: his own answers, a sign-in, a bot check, or an approval.
+4. Never guess, never invent facts, never skip a safety rule to get past a block.
+
+What each helper can be asked:
+- ChatGPT: find the employer's own careers page for a posting, confirm a posting is still live, find a missing fact such as New York eligibility, or draft a cover note or an answer for Claude to check against the resume.
+- Muse: fix or add something on the dashboard page.
+
+Helpers answer in the entry's Reply line and mark it answered. Claude verifies every reply before using it.
+
 ## Daily rhythm
 - Morning: scouts drop 3 to 5 leads.
 - Midday: Claude verifies and scores, picks the highest-odds open job, and applies. Needs his Chrome open and signed in to Indeed.
