@@ -171,8 +171,10 @@
   }
   @media (max-width: 900px) {
     .layout { grid-template-columns: 1fr; }
+    .layout main { order: -1; }
     .side { position: static; }
     .detail { border-radius: 0; }
+    .d-close { width: 42px; height: 42px; }
   }
   @media (max-width: 760px) {
     .hero { grid-template-columns: 1fr; }
