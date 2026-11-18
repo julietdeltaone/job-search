@@ -1,14 +1,4 @@
 {
   "_readme": "Scouts (Muse, ChatGPT) add raw leads here. Claude verifies, scores and moves good ones into data/jobs.json, then clears them. Do not add scores or odds. See PLAYBOOK.md.",
-  "leads": [
-    {
-      "company": "Cherry Technologies, Inc.",
-      "role": "Customer Support Specialist (Day Shift)",
-      "link": "https://www.indeed.com/viewjob?jk=54a0b18866f9e5f0",
-      "pay": "$75,000 annual base salary; $25,000 annual variable target; $100,000 total annual on-target earnings",
-      "posted": "",
-      "remote": true,
-      "why": "Customer-facing airline work and Excel/Sheets fit; fintech experience only preferred. NY not stated; remote US. Tue-Sat or Sun-Thu, 9am-6pm local. Posting date not stated."
-    }
-  ]
+  "leads": []
 }
