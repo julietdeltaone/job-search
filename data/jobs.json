@@ -360,11 +360,11 @@
       "odds": 52,
       "link": "https://to.indeed.com/aadjf48s6zpx",
       "dateFound": "2026-11-11",
-      "status": "Found",
+      "status": "Passed",
       "dateApplied": "",
       "contact": "",
       "fit": "Medium",
-      "notes": "Did not appear in Indeed searches on Nov 17, so it may be closed. Confirm it is live before applying. Nov 18: not attempted, Chrome browser tools were not available in the run.",
+      "notes": "Passed Nov 19: the posting did not appear in Indeed searches on Nov 17 or Nov 19, so it looks closed. The link could not be opened to confirm.",
       "breakdown": [
         {
           "factor": "Experience match",
@@ -422,7 +422,7 @@
       "dateApplied": "",
       "contact": "",
       "fit": "Medium",
-      "notes": "Asks for 2-4 years in business operations or analytics. The AI-built Apps Script tools are the proof point.",
+      "notes": "Asks for 2-4 years in business operations or analytics. The AI-built Apps Script tools are the proof point. Nov 19: still live on Indeed, but its computed odds are under the current floor, so it should not be applied to.",
       "breakdown": [
         {
           "factor": "Experience match",
