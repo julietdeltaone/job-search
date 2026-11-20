@@ -10,3 +10,6 @@
 - 2026-11-19 OnIT, SMB Customer Success Manager: wants 2+ years of SaaS customer success, NY not stated, and the posting says it takes applications for 7 days from Oct 27. Skip.
 - 2026-11-19 321 The Agency, Go High Level CRM Specialist: wants 3+ years of GoHighLevel and is based in Orlando, not clearly remote. Skip.
 - 2026-11-19 Scout tip: many coordinator roles in search show $36-60K pay. Check pay before sending a lead.
+- 2026-11-20 SuperOrdinary, E-Commerce Coordinator: wants 1-3+ years in ecommerce or marketplace work and TikTok Shop experience. Skip.
+- 2026-11-20 Kairon Health, Enterprise Customer Success/Operations Specialist: wants 5 years, must live in the DC to NYC corridor, posted Sep 25. Skip.
+- 2026-11-20 Wheels, Fleet Business Associate: quota-based B2B sales role with 25% travel, not an admin or operations role. Skip.
