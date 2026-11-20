@@ -1,32 +1,4 @@
 {
   "_readme": "Scouts (Muse, ChatGPT) add raw leads here. Claude verifies, scores and moves good ones into data/jobs.json, then clears them. Do not add scores or odds. See PLAYBOOK.md.",
-  "leads": [
-    {
-      "company": "Indagare",
-      "role": "Travel Operations Assistant",
-      "link": "https://indagare.com/careers/travel-operations-assistant",
-      "pay": "$70,304 annually",
-      "posted": "",
-      "remote": true,
-      "why": "Administrative coordination, supplier communication, reservations and spreadsheets match university operations and airline customer service; NY allowed under anywhere-in-US wording; full-time confirmed at https://dc1prodrecruiting.paylocity.com/Recruiting/Jobs/Details/3248125?source=LinkedIn_Feed ; posting date not stated."
-    },
-    {
-      "company": "Indagare",
-      "role": "Operations Assistant, Journeys",
-      "link": "https://indagare.com/careers/operations-assistant-journeys",
-      "pay": "$70,304 annually",
-      "posted": "",
-      "remote": true,
-      "why": "Entry-level records, scheduling, passenger communication and reporting match university administration and airline customer service; NY not stated, US remote with no state exclusion found; full-time confirmed at https://www.indeed.com/viewjob?jk=ee9e13f442770a95 ; posting date not stated."
-    },
-    {
-      "company": "Indagare",
-      "role": "Travel Planning Support",
-      "link": "https://indagare.com/careers/travel-planning-support",
-      "pay": "$70,304 annually",
-      "posted": "",
-      "remote": true,
-      "why": "Booking support, customer communication, data entry and process improvement match airline service and university operations; NY allowed under anywhere-in-US wording; one weekend day plus four weekdays; full-time confirmed at https://www.indeed.com/viewjob?jk=1bef8705fecddabd ; posting date not stated."
-    }
-  ]
+  "leads": []
 }

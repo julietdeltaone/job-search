@@ -13,3 +13,4 @@
 - 2026-11-20 SuperOrdinary, E-Commerce Coordinator: wants 1-3+ years in ecommerce or marketplace work and TikTok Shop experience. Skip.
 - 2026-11-20 Kairon Health, Enterprise Customer Success/Operations Specialist: wants 5 years, must live in the DC to NYC corridor, posted Sep 25. Skip.
 - 2026-11-20 Wheels, Fleet Business Associate: quota-based B2B sales role with 25% travel, not an admin or operations role. Skip.
+- 2026-11-20 Indagare, Travel Operations Assistant, Operations Assistant Journeys, Travel Planning Support: held, not rejected. Named employer, $70,304 and US remote look right, but this run could not open the postings (page fetch blocked, Indeed detail lookups errored), so live status, years required and NY eligibility are unverified. Not added to the tracker. See B-004.
