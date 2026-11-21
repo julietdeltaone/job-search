@@ -523,6 +523,64 @@
         "Form asks why you want to work in bitcoin, so a real answer is needed"
       ],
       "odds": 59
+    },
+    {
+      "id": "indagare-travelops",
+      "company": "Indagare",
+      "role": "Travel Operations Assistant",
+      "pay": "$70,304",
+      "payMin": 70304,
+      "payMax": 70304,
+      "link": "https://recruiting.paylocity.com/recruiting/jobs/apply/3248125",
+      "dateFound": "2026-11-20",
+      "status": "Found",
+      "dateApplied": "",
+      "contact": "",
+      "fit": "Medium",
+      "notes": "Verified live Nov 20 on the employer site. Remote anywhere in the US, NY not excluded. 1+ year of experience and a bachelor's degree are preferred, not required. Posting date not stated.",
+      "breakdown": [
+        {
+          "factor": "Experience match",
+          "weight": 35,
+          "score": 78,
+          "note": "Posting prefers 1+ years of professional experience and a bachelor's degree, and you have both."
+        },
+        {
+          "factor": "Skills match",
+          "weight": 25,
+          "score": 70,
+          "note": "It expects Microsoft Office and Google Workspace, which you use daily; Slack and Salesforce are only preferred."
+        },
+        {
+          "factor": "Role fit",
+          "weight": 20,
+          "score": 65,
+          "note": "Assistant level on a bookings team fits your coordinator work, but the travel industry is new to you."
+        },
+        {
+          "factor": "Competition",
+          "weight": 10,
+          "score": 45,
+          "note": "No posting date is shown and it is open on the employer site, so expect a wide pool."
+        },
+        {
+          "factor": "Pay vs level",
+          "weight": 10,
+          "score": 45,
+          "note": "Pay of $70,304 sits right at your floor, with no room above it."
+        }
+      ],
+      "helps": [
+        "Remote anywhere in the US",
+        "Experience and degree are preferred, not required",
+        "Daily Office and Google Workspace use"
+      ],
+      "hurts": [
+        "No travel industry background",
+        "Pay sits at the floor",
+        "Posting date unknown"
+      ],
+      "next": "Apply through the employer's Paylocity form using the saved answers."
     }
   ]
 }
