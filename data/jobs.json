@@ -418,11 +418,11 @@
       "odds": 37,
       "link": "https://to.indeed.com/aat4pvgkyv7z",
       "dateFound": "2026-11-11",
-      "status": "Found",
+      "status": "Passed",
       "dateApplied": "",
       "contact": "",
       "fit": "Medium",
-      "notes": "Asks for 2-4 years in business operations or analytics. The AI-built Apps Script tools are the proof point. Nov 19: still live on Indeed, but its computed odds are under the current floor, so it should not be applied to. Nov 20: still live on Indeed, odds still under the floor.",
+      "notes": "Asks for 2-4 years in business operations or analytics. The AI-built Apps Script tools are the proof point. Nov 19: still live on Indeed, but its computed odds are under the current floor, so it should not be applied to. Nov 20: still live on Indeed, odds still under the floor. Passed Nov 21: two Indeed searches no longer show the posting, so it looks closed. Odds were also under the floor.",
       "breakdown": [
         {
           "factor": "Experience match",
@@ -464,7 +464,7 @@
         "No consulting or analytics title",
         "Pay band is far above your current level"
       ],
-      "next": "Apply this week. Put a number on what your tools saved, such as hours per week."
+      "next": "Passed. No action."
     },
     {
       "id": "river-clientops",
@@ -537,7 +537,7 @@
       "dateApplied": "",
       "contact": "",
       "fit": "Medium",
-      "notes": "Verified live Nov 20 on the employer site. Remote anywhere in the US, NY not excluded. 1+ year of experience and a bachelor's degree are preferred, not required. Posting date not stated.",
+      "notes": "Verified live Nov 20 on the employer site. Remote anywhere in the US, NY not excluded. 1+ year of experience and a bachelor's degree are preferred, not required. Posting date not stated. Nov 21: still listed in web search results on the employer's Paylocity page. The page itself could not be opened this run, so live status rests on the Nov 20 check and the B-004 reply (1+ years preferred, Fully Remote, NY listed).",
       "breakdown": [
         {
           "factor": "Experience match",
