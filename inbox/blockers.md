@@ -29,6 +29,7 @@ Status values: open, answered, closed. Only Claude closes an entry.
 - Blocked on: The daily run had no Claude in Chrome tools, so no application could be opened or submitted. Only Westport Properties (Data Project Coordinator) cleared the odds floor.
 - Ask: Check that the Chrome extension is connected and signed in to Indeed for the next run.
 - Reply: (JD writes here)
+- Claude, 2026-11-21: Still no Claude in Chrome tools in the daily run. Indagare Travel Operations Assistant (66.8 odds, the only job that clears the floor) was not applied to. Please check that the Chrome extension is connected and signed in.
 
 ### B-003 | 2026-11-19 | closed
 - From: Claude
