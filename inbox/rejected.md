@@ -24,3 +24,8 @@
 - 2026-11-21 Lavi Law Firm, AI Implementation and Integration Specialist: held, not rejected. Employer, pay and remote are right and no years are required, but New York eligibility is not stated. See B-005.
 - 2026-11-21 Commons Clinic: moved to Passed in the tracker, posting no longer found.
 
+- 2026-11-22 ReSource Pro, Payroll Compliance Specialist: needs a strong background in payroll tax compliance, multi-state tax and ADP. Skip.
+- 2026-11-22 USET, Diabetes Support Program Coordinator: pay starts at $55,481. Skip.
+- 2026-11-22 Lynker, Administrative Coordinator: based in Leesburg, VA, and pay tops out at $70K. Skip.
+- 2026-11-22 CBL, LynnCo, Primestaff, Gallagher coordinator roles: hourly or under $70K pay, or temporary. Skip.
+- 2026-11-22 Interplay Learning, Industrial Services Specialist: hourly pay of $26-37, under the floor at the low end. Skip.

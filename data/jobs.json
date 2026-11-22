@@ -537,7 +537,7 @@
       "dateApplied": "",
       "contact": "",
       "fit": "Medium",
-      "notes": "Verified live Nov 20 on the employer site. Remote anywhere in the US, NY not excluded. 1+ year of experience and a bachelor's degree are preferred, not required. Posting date not stated. Nov 21: still listed in web search results on the employer's Paylocity page. The page itself could not be opened this run, so live status rests on the Nov 20 check and the B-004 reply (1+ years preferred, Fully Remote, NY listed). Nov 21: not applied, Claude in Chrome tools were not available this run.",
+      "notes": "Verified live Nov 20 on the employer site. Remote anywhere in the US, NY not excluded. 1+ year of experience and a bachelor's degree are preferred, not required. Posting date not stated. Nov 21: still listed in web search results on the employer's Paylocity page. The page itself could not be opened this run, so live status rests on the Nov 20 check and the B-004 reply (1+ years preferred, Fully Remote, NY listed). Nov 21: not applied, Claude in Chrome tools were not available this run. Nov 22: still listed in web search on the employer and Paylocity pages. Page not opened here. Not applied, no Chrome tools this run.",
       "breakdown": [
         {
           "factor": "Experience match",
@@ -581,6 +581,65 @@
         "Posting date unknown"
       ],
       "next": "Apply through the employer's Paylocity form using the saved answers."
+    },
+    {
+      "id": "beaconfold-impl",
+      "company": "Beaconfold Commerce",
+      "role": "Implementation Specialist",
+      "pay": "$78,000 - $98,000 + 8% bonus",
+      "payMin": 78000,
+      "payMax": 98000,
+      "link": "https://to.indeed.com/aatr7cdnpmmk",
+      "dateFound": "2026-11-22",
+      "status": "Found",
+      "dateApplied": "",
+      "contact": "",
+      "fit": "Medium",
+      "notes": "Verified on Indeed Nov 22: posted Nov 20, fully remote, location United States, named employer, base pay stated. NY not named but not excluded. Asks 2+ years in implementation, onboarding, project coordination, operations or B2B support. Programming not required.",
+      "breakdown": [
+        {
+          "factor": "Experience match",
+          "weight": 35,
+          "score": 68,
+          "note": "Posting asks for 2+ years in project coordination or operations, and your program coordinator work fits that, though not in software."
+        },
+        {
+          "factor": "Skills match",
+          "weight": 25,
+          "score": 72,
+          "note": "It wants spreadsheets, CRM and project tools, and you use Sheets and build Apps Script tools; CRM use is new."
+        },
+        {
+          "factor": "Role fit",
+          "weight": 20,
+          "score": 70,
+          "note": "Implementation Specialist is on your target list, but the customers and software are new to you."
+        },
+        {
+          "factor": "Competition",
+          "weight": 10,
+          "score": 50,
+          "note": "Posted Nov 20 as fully remote across the US, so expect many applicants."
+        },
+        {
+          "factor": "Pay vs level",
+          "weight": 10,
+          "score": 85,
+          "note": "Pay of $78K to $98K sits well above your $70K floor."
+        }
+      ],
+      "helps": [
+        "Fully remote, US wide",
+        "Programming not required",
+        "Pay well above the floor",
+        "Coordination and documentation work matches yours"
+      ],
+      "hurts": [
+        "No software or e-commerce implementation years",
+        "CRM use is new",
+        "NY not named in the posting"
+      ],
+      "next": "Apply on Indeed with the saved answers. Mention project tracking and Apps Script tools."
     }
   ]
 }
