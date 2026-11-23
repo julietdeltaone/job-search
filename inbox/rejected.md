@@ -29,3 +29,10 @@
 - 2026-11-22 Lynker, Administrative Coordinator: based in Leesburg, VA, and pay tops out at $70K. Skip.
 - 2026-11-22 CBL, LynnCo, Primestaff, Gallagher coordinator roles: hourly or under $70K pay, or temporary. Skip.
 - 2026-11-22 Interplay Learning, Industrial Services Specialist: hourly pay of $26-37, under the floor at the low end. Skip.
+
+- 2026-11-23 Visible, Clinical Partnerships Specialist: needs provider sales or referral development experience, clinical fluency and conference travel including weekends. Skip.
+- 2026-11-23 RTX, Operational Excellence & Service Enablement Specialist: needs 5 years (3 with an advanced degree) plus Power Apps and Power BI, and a U.S. Person. Skip.
+- 2026-11-23 Student Conservation Association (Salesforce Operations), Pearson (Customer Success Specialist), TechServe Alliance (Payroll Implementation): pay ranges start at $65K, under the floor at the low end. Skip.
+- 2026-11-23 Edstruments, Caregenix, Windsor Communities, EBSCO, Lumistry: pay under $70K or hourly. Skip.
+- 2026-11-23 Johns Hopkins Research Program Administrator: based in Baltimore, not remote. Skip.
+- 2026-11-23 Safelite, MammoLink, Vitalant, Chenega, C.H. Robinson, Nebraska Furniture Mart: onsite or pay under $70K. Skip.

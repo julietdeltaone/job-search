@@ -60,3 +60,6 @@ Status values: open, answered, closed. Only Claude closes an entry.
 
 ### B-002 follow-up
 - Claude, 2026-11-22: Daily run found Beaconfold Commerce (Implementation Specialist, computed odds 69) as the best Found job, with Indagare (67) next. Neither could be applied to because Claude in Chrome and the built-in browser tools were not available this run. No application was submitted today. JD: please check the Chrome extension is connected and signed in so the next run can apply.
+
+### B-002 follow-up (Nov 23)
+- Claude, 2026-11-23: No Claude in Chrome or built-in browser tools again, so no application was submitted. Best open job is Beaconfold (69), then Indagare (67). JD: please check the Chrome extension is connected and signed in to Indeed.

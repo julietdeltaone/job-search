@@ -537,7 +537,7 @@
       "dateApplied": "",
       "contact": "",
       "fit": "Medium",
-      "notes": "Verified live Nov 20 on the employer site. Remote anywhere in the US, NY not excluded. 1+ year of experience and a bachelor's degree are preferred, not required. Posting date not stated. Nov 21: still listed in web search results on the employer's Paylocity page. The page itself could not be opened this run, so live status rests on the Nov 20 check and the B-004 reply (1+ years preferred, Fully Remote, NY listed). Nov 21: not applied, Claude in Chrome tools were not available this run. Nov 22: still listed in web search on the employer and Paylocity pages. Page not opened here. Not applied, no Chrome tools this run.",
+      "notes": "Verified live Nov 20 on the employer site. Remote anywhere in the US, NY not excluded. 1+ year of experience and a bachelor's degree are preferred, not required. Posting date not stated. Nov 21: still listed in web search results on the employer's Paylocity page. The page itself could not be opened this run, so live status rests on the Nov 20 check and the B-004 reply (1+ years preferred, Fully Remote, NY listed). Nov 21: not applied, Claude in Chrome tools were not available this run. Nov 22: still listed in web search on the employer and Paylocity pages. Page not opened here. Not applied, no Chrome tools this run. Nov 23 recheck: employer posting page still open with Apply link, fully remote, NY tagged. Not applied, no browser tools (see B-002).",
       "breakdown": [
         {
           "factor": "Experience match",
@@ -595,7 +595,7 @@
       "dateApplied": "",
       "contact": "",
       "fit": "Medium",
-      "notes": "Verified on Indeed Nov 22: posted Nov 20, fully remote, location United States, named employer, base pay stated. NY not named but not excluded. Asks 2+ years in implementation, onboarding, project coordination, operations or B2B support. Programming not required. Nov 22 run: not applied, no browser tools available (see B-002).",
+      "notes": "Verified on Indeed Nov 22: posted Nov 20, fully remote, location United States, named employer, base pay stated. NY not named but not excluded. Asks 2+ years in implementation, onboarding, project coordination, operations or B2B support. Programming not required. Nov 22 run: not applied, no browser tools available (see B-002). Nov 23 recheck: Indeed search could not find it by name and the detail lookup errored, so not confirmed gone. Kept Found.",
       "breakdown": [
         {
           "factor": "Experience match",
@@ -640,6 +640,65 @@
         "NY not named in the posting"
       ],
       "next": "Apply on Indeed with the saved answers. Mention project tracking and Apps Script tools."
+    },
+    {
+      "id": "optum-provider-edu",
+      "company": "Optum",
+      "role": "Provider Education and Engagement Specialist",
+      "pay": "$72,800 - $130,000",
+      "payMin": 72800,
+      "payMax": 130000,
+      "link": "https://to.indeed.com/aakg8mrlmj74",
+      "dateFound": "2026-11-23",
+      "status": "Found",
+      "dateApplied": "",
+      "contact": "",
+      "fit": "Medium",
+      "notes": "Verified on Indeed Nov 23: posted Nov 20, remote from anywhere in the U.S., named employer, base range stated. No years stated. Posting may come down early due to volume. Needs training development and delivery experience, which is thin.",
+      "breakdown": [
+        {
+          "factor": "Experience match",
+          "weight": 35,
+          "score": 45,
+          "note": "It requires demonstrated experience developing and delivering training for adult learners, and your program coordination only partly covers that."
+        },
+        {
+          "factor": "Skills match",
+          "weight": 25,
+          "score": 55,
+          "note": "It wants training materials, presentations, webinars and Microsoft Office, and you have the office and workflow skills but little formal training design."
+        },
+        {
+          "factor": "Role fit",
+          "weight": 20,
+          "score": 45,
+          "note": "Provider education sits next to your health-programs coordination work but is not one of your target titles."
+        },
+        {
+          "factor": "Competition",
+          "weight": 10,
+          "score": 30,
+          "note": "Optum is a large employer and the posting says it may close early due to volume."
+        },
+        {
+          "factor": "Pay vs level",
+          "weight": 10,
+          "score": 70,
+          "note": "The range starts at $72,800, just above your $70K floor."
+        }
+      ],
+      "helps": [
+        "Remote from anywhere in the U.S.",
+        "Health-professions program background",
+        "Onboarding materials and webinar coordination overlap yours",
+        "No years of experience stated"
+      ],
+      "hurts": [
+        "Training design experience is thin",
+        "Large applicant pool",
+        "Posting may close early"
+      ],
+      "next": "Apply only if no higher-odds job is open. Mention health-professions program coordination and internal tools."
     }
   ]
 }
