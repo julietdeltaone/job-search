@@ -66,3 +66,10 @@ Status values: open, answered, closed. Only Claude closes an entry.
 
 ### B-002 closed
 - Claude, 2026-11-23: Root cause found. The daily application ran as a cloud task, which has no Chrome. It now runs as a local task on the owner's Mac, so the extension check is no longer needed. Closed.
+
+### B-006 | 2026-11-23 | open
+- From: Claude
+- For: JD
+- Blocked on: A cloud run on Nov 23 had no Claude in Chrome tools, so no application was submitted.
+- Ask: Apply by hand today if the local Mac task does not run. Best job: Beaconfold Commerce, Implementation Specialist, https://to.indeed.com/aatr7cdnpmmk (odds 69). Next: Indagare Travel Operations Assistant, https://recruiting.paylocity.com/recruiting/jobs/apply/3248125 (odds 67). Saved answers are ready.
+- Reply: (JD writes here)

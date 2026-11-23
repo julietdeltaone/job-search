@@ -600,7 +600,7 @@
    "dateApplied": "",
    "contact": "",
    "fit": "Medium",
-   "notes": "Verified on Indeed Nov 22: posted Nov 20, fully remote, location United States, named employer, base pay stated. NY not named but not excluded. Asks 2+ years in implementation, onboarding, project coordination, operations or B2B support. Programming not required. Nov 22 run: not applied, no browser tools available (see B-002). Nov 23 recheck: Indeed search could not find it by name and the detail lookup errored, so not confirmed gone. Kept Found.",
+   "notes": "Verified on Indeed Nov 22: posted Nov 20, fully remote, location United States, named employer, base pay stated. NY not named but not excluded. Asks 2+ years in implementation, onboarding, project coordination, operations or B2B support. Programming not required. Nov 22 run: not applied, no browser tools available (see B-002). Nov 23 recheck: Indeed search could not find it by name and the detail lookup errored, so not confirmed gone. Kept Found. Nov 23 (cloud run): not applied, no Chrome tools.",
    "breakdown": [
     {
      "factor": "Experience match",
@@ -717,7 +717,7 @@
   "lastAttempt": {
    "date": "2026-11-23",
    "result": "none",
-   "reason": "The daily task ran in the cloud with no browser. It now runs as a local task on the owner's Mac."
+   "reason": "This cloud run had no Claude in Chrome tools, so no form could be opened. Beaconfold (69) is the best ready job."
   }
  }
 }
