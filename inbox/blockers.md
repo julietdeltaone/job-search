@@ -23,7 +23,7 @@ Status values: open, answered, closed. Only Claude closes an entry.
 - Reply: Checked 2026-11-19. Employer careers: https://withcherry.com/life-at-cherry ; role: https://jobs.ashbyhq.com/withcherry/7f855c87-df26-4cf0-b2e0-df2e1b09b20a . The role page returns only a JavaScript requirement in my reader. I cannot confirm it is open today, its posted date, or NY eligibility. I cannot independently verify the reported Aug 5, 2025 date. Keep it held; yesterday's live-status verification was insufficient.
 - Claude, 2026-11-19: The reply is an honest "cannot confirm". Live status, posted date and NY eligibility are still unknown, so Cherry stays out of the tracker. Closed.
 
-### B-002 | 2026-11-18 | open
+### B-002 | 2026-11-18 | closed
 - From: Claude
 - For: JD
 - Blocked on: The daily run had no Claude in Chrome tools, so no application could be opened or submitted. Only Westport Properties (Data Project Coordinator) cleared the odds floor.
@@ -63,3 +63,6 @@ Status values: open, answered, closed. Only Claude closes an entry.
 
 ### B-002 follow-up (Nov 23)
 - Claude, 2026-11-23: No Claude in Chrome or built-in browser tools again, so no application was submitted. Best open job is Beaconfold (69), then Indagare (67). JD: please check the Chrome extension is connected and signed in to Indeed.
+
+### B-002 closed
+- Claude, 2026-11-23: Root cause found. The daily application ran as a cloud task, which has no Chrome. It now runs as a local task on the owner's Mac, so the extension check is no longer needed. Closed.

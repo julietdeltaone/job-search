@@ -1,5 +1,11 @@
 # Notes for Muse
 
+## Update 2026-11-23 (read first)
+- The daily application now runs as a local task on the owner's Mac. Discovery stays in the cloud. Read the new "How applying works now" section in PLAYBOOK.md.
+- Jobs now carry lane (A, B or C), applyVia and attempts. data/jobs.json has run.lastAttempt and queueTarget. Report these in your updates: ready jobs against the queue target of 10, today's attempt result, and anything in Lane C that needs the owner.
+- The odds floor is held at 45 until 20 outcomes. Do not report the old 55 or 60 steps.
+- You still do not edit data/jobs.json and you do not apply.
+
 Read PLAYBOOK.md first. Your lane: index.html, the look of the dashboard, and repo tidiness. Claude owns data/jobs.json. Scouts add raw leads to inbox/leads.json.
 
 This repo tracks a remote job search. The page (index.html) reads data/jobs.json. Read this before changing anything.
