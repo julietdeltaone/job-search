@@ -36,3 +36,12 @@
 - 2026-11-23 Edstruments, Caregenix, Windsor Communities, EBSCO, Lumistry: pay under $70K or hourly. Skip.
 - 2026-11-23 Johns Hopkins Research Program Administrator: based in Baltimore, not remote. Skip.
 - 2026-11-23 Safelite, MammoLink, Vitalant, Chenega, C.H. Robinson, Nebraska Furniture Mart: onsite or pay under $70K. Skip.
+
+- 2026-11-24 Onebrief, IT Support Specialist: requires 3+ years of IT support and U.S. citizenship. Skip.
+- 2026-11-24 Pension Boards UCC, Account Manager: requires 3-5 years in account management or customer success. Skip.
+- 2026-11-24 NAAF, Manager Data & Technology: requires 2 years of Salesforce and IT support plus DonorDrive. Skip.
+- 2026-11-24 Hanover, Associate Small Commercial Risk Solutions Consultant: needs loss control field experience, field surveys and ladder climbing. Skip.
+- 2026-11-24 Delta Delta Delta (Dallas), Truvant (NJ), InnovAge (Denver): Executive Assistant roles are not remote. Skip.
+- 2026-11-24 Synapse Health, Benefits & Leave Coordinator ($51-77K), MedTech Innovator, Program Associate (hourly, tops near $73K), Aquila Group, Application Support Specialist ($55-75K): low end under $70K. Skip.
+- 2026-11-24 Pearson (Customer Success Specialist, $65-75K) and CaptivateIQ (Customer Success Associate): seen again, still under the floor at the low end or mostly variable pay. Skip.
+- 2026-11-24 Anchor Utility, MagaHire, Industrial Services Group: no pay stated. Skip.

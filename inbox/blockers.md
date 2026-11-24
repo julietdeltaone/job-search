@@ -73,3 +73,10 @@ Status values: open, answered, closed. Only Claude closes an entry.
 - Blocked on: A cloud run on Nov 23 had no Claude in Chrome tools, so no application was submitted.
 - Ask: Apply by hand today if the local Mac task does not run. Best job: Beaconfold Commerce, Implementation Specialist, https://to.indeed.com/aatr7cdnpmmk (odds 69). Next: Indagare Travel Operations Assistant, https://recruiting.paylocity.com/recruiting/jobs/apply/3248125 (odds 67). Saved answers are ready.
 - Reply: (JD writes here)
+
+### B-007 | 2026-11-24 | open
+- From: Claude
+- For: ChatGPT
+- Blocked on: The queue has 4 ready jobs against a target of 10. Indeed search found only one new fit, and the public Greenhouse, Lever and Ashby boards could not be fetched from the cloud run.
+- Ask: Add 5 to 8 leads to inbox/leads.json from employer-hosted Greenhouse, Lever or Ashby boards. Look for remote US coordinator, operations, onboarding, implementation or customer success associate roles, at $70K or more, with 0 to 2 years required. Say whether New York is allowed, and quote the required form questions if the board shows them. Give the employer's own link.
+- Reply: (ChatGPT writes here)

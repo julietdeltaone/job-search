@@ -710,6 +710,68 @@
    "lane": "C",
    "applyVia": "Indeed to Workday",
    "attempts": []
+  },
+  {
+   "id": "vetcove-apm",
+   "company": "Vetcove",
+   "role": "Associate Product Manager",
+   "pay": "$70,000 - $110,000",
+   "payMin": 70000,
+   "payMax": 110000,
+   "link": "https://to.indeed.com/aar4grvhmjnx",
+   "dateFound": "2026-11-24",
+   "status": "Found",
+   "dateApplied": "",
+   "contact": "",
+   "fit": "Medium",
+   "notes": "Read on Indeed Nov 24: remote, US range stated, named employer, 1+ years product or business ops or project coordination, bachelor's degree. A Built In copy says Hiring Remotely in USA and applications are rolling; New York is not excluded or named. Apply form not read, platform unconfirmed. Stage 2 should stop if the form needs an unsaved answer.",
+   "breakdown": [
+    {
+     "factor": "Experience match",
+     "weight": 35,
+     "score": 70,
+     "note": "It asks for 1+ years in product, business operations or project coordination, which your program coordination covers."
+    },
+    {
+     "factor": "Skills match",
+     "weight": 25,
+     "score": 65,
+     "note": "It wants spreadsheets, dashboards, documentation and cross-team coordination, and you build trackers and reports in Sheets and Apps Script."
+    },
+    {
+     "factor": "Role fit",
+     "weight": 20,
+     "score": 55,
+     "note": "Associate Product Manager is a product-operations support role, one step off your coordinator titles."
+    },
+    {
+     "factor": "Competition",
+     "weight": 10,
+     "score": 45,
+     "note": "The posting is about a month old and listed on several boards, though it says applications are rolling."
+    },
+    {
+     "factor": "Pay vs level",
+     "weight": 10,
+     "score": 65,
+     "note": "The range of $70,000 to $110,000 starts at your floor and has room above it."
+    }
+   ],
+   "helps": [
+    "Remote, US-wide",
+    "Only 1+ years required",
+    "Spreadsheets, documentation and coordination match his tools",
+    "Pay starts at his floor"
+   ],
+   "hurts": [
+    "Product title is new to him",
+    "Posting about a month old",
+    "Apply form unread"
+   ],
+   "next": "Apply through the employer careers page. Mention coordination work and the internal tools built in Apps Script.",
+   "lane": "B",
+   "applyVia": "Employer careers page (platform unconfirmed)",
+   "attempts": []
   }
  ],
  "queueTarget": 10,
