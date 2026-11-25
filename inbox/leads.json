@@ -1,4 +1,14 @@
 {
   "_readme": "Scouts (Muse, ChatGPT) add raw leads here. Claude verifies, scores and moves good ones into data/jobs.json, then clears them. Do not add scores or odds. See PLAYBOOK.md.",
-  "leads": []
+  "leads": [
+    {
+      "company": "NextPatient",
+      "role": "Customer Success Associate",
+      "link": "https://wellfound.com/jobs/3489221-customer-success-associate",
+      "pay": "$70,000 - $80,000 a year",
+      "posted": "",
+      "remote": true,
+      "why": "Entry-level medical-practice software support fits health-program coordination, customer service and workflow tools; US remote including Eastern time, NY not stated; exact posting date not stated."
+    }
+  ]
 }
