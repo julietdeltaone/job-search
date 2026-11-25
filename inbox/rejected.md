@@ -45,3 +45,8 @@
 - 2026-11-24 Synapse Health, Benefits & Leave Coordinator ($51-77K), MedTech Innovator, Program Associate (hourly, tops near $73K), Aquila Group, Application Support Specialist ($55-75K): low end under $70K. Skip.
 - 2026-11-24 Pearson (Customer Success Specialist, $65-75K) and CaptivateIQ (Customer Success Associate): seen again, still under the floor at the low end or mostly variable pay. Skip.
 - 2026-11-24 Anchor Utility, MagaHire, Industrial Services Group: no pay stated. Skip.
+
+- 2026-11-25 NextPatient, Customer Success Associate ($70-80K): held, not rejected. Pay, US remote and "no experience required" look right on the Wellfound copy, but the employer's Ashby page and form could not be read, NY is not stated and the posting date is unknown. Same rule as Lavi. See B-008.
+- 2026-11-25 Lavi Law Firm: re-read in full on Indeed. Fit is good (hands-on AI tool setup, no years required, $80-110K) but NY eligibility is still unstated. Stays held. See B-005.
+- 2026-11-25 genius visionary inc (AI & Automation Specialist, $120-140K): no real employer name, only a web address, and the pay is far above the role level. Skip.
+- 2026-11-25 Vireo Health, People Operations Specialist ($65-70K), Blitz Media, B2B Sales Associate, Mannn rent a car, DAC Wireless, Norseman, Amphenol (onsite), AxisCare (Waco TX), Lowe's (hourly): pay under $70K, hourly, sales or not remote. Skip.
