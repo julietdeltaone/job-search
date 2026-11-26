@@ -50,3 +50,8 @@
 - 2026-11-25 Lavi Law Firm: re-read in full on Indeed. Fit is good (hands-on AI tool setup, no years required, $80-110K) but NY eligibility is still unstated. Stays held. See B-005.
 - 2026-11-25 genius visionary inc (AI & Automation Specialist, $120-140K): no real employer name, only a web address, and the pay is far above the role level. Skip.
 - 2026-11-25 Vireo Health, People Operations Specialist ($65-70K), Blitz Media, B2B Sales Associate, Mannn rent a car, DAC Wireless, Norseman, Amphenol (onsite), AxisCare (Waco TX), Lowe's (hourly): pay under $70K, hourly, sales or not remote. Skip.
+
+- 2026-11-26 NatGasHub, Client Success Associate ($70K+): requires 3 years of natural gas scheduling and 3 years of energy consulting. Skip.
+- 2026-11-26 OnIT, SMB Customer Success Manager ($70-85K): requires 2+ years in customer success or implementation, and the posting said it would close 7 days after Oct 27. Skip.
+- 2026-11-26 Kairon Health, Enterprise Customer Success/Operations Specialist: requires 5 years and residence in the DC to NYC corridor. Skip.
+- 2026-11-26 Autism Learning Partners (Monrovia, CA), Conduent EDI L1 Support ($63K low end), re:Members Client Solutions Associate ($58K low end): onsite or under the floor. Skip.
