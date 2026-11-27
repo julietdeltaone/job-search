@@ -55,3 +55,11 @@
 - 2026-11-26 OnIT, SMB Customer Success Manager ($70-85K): requires 2+ years in customer success or implementation, and the posting said it would close 7 days after Oct 27. Skip.
 - 2026-11-26 Kairon Health, Enterprise Customer Success/Operations Specialist: requires 5 years and residence in the DC to NYC corridor. Skip.
 - 2026-11-26 Autism Learning Partners (Monrovia, CA), Conduent EDI L1 Support ($63K low end), re:Members Client Solutions Associate ($58K low end): onsite or under the floor. Skip.
+
+- 2026-11-27 Culmen International, Operations Administration and Logistics Coordinator ($85-110K): requires 5 years plus CBRN detection knowledge, nationwide travel and surge weekends. Skip.
+- 2026-11-27 FCT / First American, Implementation Specialist ($85-113K): requires 4+ years of implementation or project experience. Skip.
+- 2026-11-27 DraftKings, Associate Problem Manager ($72-90K): needs incident or problem management experience and Datadog or PagerDuty tools, NY not stated. Skip.
+- 2026-11-27 CBRE, Vendor Analyst ($75-80K, 0-3 years): held, not rejected. Fit is good, but the posting strongly prefers Central or Western time zones, NY eligibility is not stated, and the apply path could not be read (CBRE usually uses an account). Same rule as Lavi.
+- 2026-11-27 Kaizen Business Mastery (Veteran Admissions Specialist): written for veterans. Skip.
+- 2026-11-27 Vireo, Payroll Implementation (TechServe), re:Members, PharmacyAI, Edstruments, Anchor Utility, Affordable Dentures, U.S. LawShield: pay under $70K at the low end or not stated. Skip.
+- 2026-11-27 NatGasHub (seen again), AllWork, TipHaus, Impressit, Orb Group (part-time), Aline (no pay), VEC (San Francisco): needs prior experience, not entry level or pay unclear. Skip.

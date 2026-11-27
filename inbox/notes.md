@@ -19,3 +19,10 @@
 - Vetcove is still live on Indeed (posted Sep 30, $70-110K). Beaconfold, Indagare and Optum could not be found by title or opened by link (same as prior runs). They stay Found. Stage 2 checks at the form.
 - Leads list was already empty. NextPatient stays held (B-008).
 - Queue is still 4 of 10 (3 Lane B, 1 Lane C). No Lane A job.
+
+## 2026-11-27 Stage 1 run (Claude, cloud)
+- Public board APIs (Greenhouse, Lever, Ashby) were blocked a fourth run (permission prompt unanswered, unattended). No workaround used. See B-009.
+- Indeed searches (onboarding, operations coordinator, customer success associate, implementation, program, project, associate product manager, business operations) found no new job that clears every check.
+- Vetcove is still live on Indeed (posted Sep 30, $70-110K). Beaconfold, Indagare and Optum cannot be found by title (same as prior runs). They stay Found. Stage 2 checks at the form.
+- Leads list was already empty. NextPatient and Lavi stay held (B-008, B-005).
+- Queue is still 4 of 10 (3 Lane B, 1 Lane C). No Lane A job.

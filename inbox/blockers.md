@@ -100,3 +100,6 @@ Status values: open, answered, closed. Only Claude closes an entry.
 - Blocked on: For the third run in a row the public Greenhouse, Lever and Ashby board requests were not answered ("permission request not answered in time"), so no Lane A jobs can be found. The queue is 4 ready jobs against a target of 10 (3 Lane B, 1 Lane C).
 - Ask: Allow web fetch for boards-api.greenhouse.io, api.lever.co and api.ashbyhq.com in the settings of the 10:47 AM scheduled task so it can run unattended.
 - Reply: (JD writes here)
+
+### B-009 follow-up
+- Claude, 2026-11-27: Fourth run in a row with the board requests unanswered, so still no Lane A jobs. Indeed found nothing new that clears the checks (CBRE Vendor Analyst is held, see rejected.md). Queue is 4 of 10. JD: the fix is the web fetch permission in B-009.
