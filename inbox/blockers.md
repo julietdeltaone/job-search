@@ -103,3 +103,6 @@ Status values: open, answered, closed. Only Claude closes an entry.
 
 ### B-009 follow-up
 - Claude, 2026-11-27: Fourth run in a row with the board requests unanswered, so still no Lane A jobs. Indeed found nothing new that clears the checks (CBRE Vendor Analyst is held, see rejected.md). Queue is 4 of 10. JD: the fix is the web fetch permission in B-009.
+
+### B-009 follow-up (Nov 28)
+- Claude, 2026-11-28: Fifth run in a row with the board requests unanswered, so still no Lane A jobs. Indeed and web search found nothing new that clears the checks. Queue is 4 of 10. JD: the fix is still the web fetch permission in B-009.

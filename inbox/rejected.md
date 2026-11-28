@@ -63,3 +63,8 @@
 - 2026-11-27 Kaizen Business Mastery (Veteran Admissions Specialist): written for veterans. Skip.
 - 2026-11-27 Vireo, Payroll Implementation (TechServe), re:Members, PharmacyAI, Edstruments, Anchor Utility, Affordable Dentures, U.S. LawShield: pay under $70K at the low end or not stated. Skip.
 - 2026-11-27 NatGasHub (seen again), AllWork, TipHaus, Impressit, Orb Group (part-time), Aline (no pay), VEC (San Francisco): needs prior experience, not entry level or pay unclear. Skip.
+
+- 2026-11-28 neuroCare Group, Clinical Training and Education Associate ($110-145K): needs medical field experience with patients and clinical staff, and travel up to 80% of the time. Skip.
+- 2026-11-28 Onebrief, IT Support Specialist ($100-112K): requires 3+ years of IT support, U.S. citizenship and Pacific business hours. Skip.
+- 2026-11-28 Franchise FastLane ($55-65K), Ticketure (Los Angeles, $65-72K), Alliant (hourly), Freight Partners Group ($55-75K), Kaizen (veterans, seen again), TechServe, Anchor Utility, U.S. LawShield, Affordable Dentures, Edstruments, OnIT (closed window): low end under $70K, not remote, hourly, no pay stated or already rejected. Skip.
+- 2026-11-28 CBRE, Vendor Analyst: still held, same reasons as Nov 27.
